@@ -121,7 +121,7 @@ module Xceleration
         raise Xceleration::InvalidToken if error_message.start_with?("Invalid Token")
         raise Xceleration::InvalidAccount if error_message.start_with?("Invalid Account Number")
         raise Xceleration::InvalidUser if error_message.start_with?("Invalid User")
-        raise Xceleration::UserAlreadyExists if error_message.starts_with?("User Name:") && error_message.ends_with?("Please enter a different user name.")
+        raise Xceleration::UserAlreadyExists if error_message.start_with?("User Name:") && error_message.end_with?("Please enter a different user name.")
       end
     end
 

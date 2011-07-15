@@ -1,0 +1,35 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <soap:Body>
+      <ReturnUserResponse xmlns="http://rswebservices.rewardstation.com/">
+         <ReturnUserResult>
+            <UserID>6725</UserID>
+            <UserProfile>
+               <UserID>6725</UserID>
+               <ClientID>100080</ClientID>
+               <UserName>john3@company.com</UserName>
+               <EncryptedPassword/>
+               <FirstName>John</FirstName>
+               <LastName>Smith</LastName>
+               <AddressOne/>
+               <AddressTwo/>
+               <City/>
+               <StateCode/>
+               <Province/>
+               <PostalCode/>
+               <CountryCode>USA</CountryCode>
+               <Phone/>
+               <Email>john@company.com</Email>
+               <OrganizationID>0</OrganizationID>
+               <OrganizationName/>
+               <RepTypeID>0</RepTypeID>
+               <ClientRegionID>0</ClientRegionID>
+               <IsActive>true</IsActive>
+               <PointBalance>10</PointBalance>
+               <ManagerID>0</ManagerID>
+               <ErrorMessage/>
+            </UserProfile>
+            <ErrorMessage/>
+         </ReturnUserResult>
+      </ReturnUserResponse>
+   </soap:Body>
+</soap:Envelope>

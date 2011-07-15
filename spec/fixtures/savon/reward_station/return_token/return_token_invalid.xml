@@ -1,0 +1,10 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <soap:Body>
+      <ReturnTokenResponse xmlns="http://rswebservices.rewardstation.com/">
+         <ReturnTokenResult>
+            <Token/>
+            <ErrorMessage>Invalid Account Number and/or Account Code. Please contact Xceleration.</ErrorMessage>
+         </ReturnTokenResult>
+      </ReturnTokenResponse>
+   </soap:Body>
+</soap:Envelope>

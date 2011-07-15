@@ -1,0 +1,9 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <soap:Body>
+      <UpdateUserResponse xmlns="http://rswebservices.rewardstation.com/">
+         <UpdateUserResult>
+            <ErrorMessage>User Name: john3@company.com already exists. Please enter a different user name.</ErrorMessage>
+         </UpdateUserResult>
+      </UpdateUserResponse>
+   </soap:Body>
+</soap:Envelope>

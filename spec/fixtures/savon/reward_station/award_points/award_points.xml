@@ -1,0 +1,12 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <soap:Body>
+      <AwardPointsResponse xmlns="http://rswebservices.rewardstation.com/">
+         <AwardPointsResult>
+            <UserID>577</UserID>
+            <Points>10</Points>
+            <ConfirmationNumber>9376</ConfirmationNumber>
+            <ErrorMessage/>
+         </AwardPointsResult>
+      </AwardPointsResponse>
+   </soap:Body>
+</soap:Envelope>

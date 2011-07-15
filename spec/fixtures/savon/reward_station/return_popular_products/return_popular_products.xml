@@ -1,0 +1,362 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <soap:Body>
+      <ReturnPopularProductsResponse xmlns="http://rswebservices.rewardstation.com/">
+         <ReturnPopularProductsResult>
+            <UserID>577</UserID>
+            <Products>
+               <Product>
+                  <ProductID>MC770LLA</ProductID>
+                  <Name>iPad 2 with Wifi - 32GB</Name>
+                  <Description><![CDATA[The NEW Apple iPad 2 - Thinner, lighter, and full of great ideas.  Once you pick up iPad 2, it’ll be hard to put down.  That’s the idea behind the all-new design. It’s 33 percent thinner and up to 15 percent lighter, so it feels even more comfortable in your hands.  And, it makes surfing the web, checking email, watching movies, and reading books so natural, you might forget there’s incredible technology under your fingers.<br><br><b>Dual-core A5 chip</b>.<br> Two powerful cores in one A5 chip mean iPad can do twice the work at once.  You’ll notice the difference when you’re surfing the web, watching movies, making FaceTime video calls, gaming, and going from app to app to app.  Multitasking is smoother, apps load faster, and everything just works better.<br><br><b>Superfast graphics</b>. <br>With up to nine times the graphics performance, gameplay on iPad is even smoother and more realistic.  And faster graphics help apps perform better — especially those with video.  You’ll see it when you’re scrolling through your photo library, editing video with iMovie, and viewing animations in Keynote.<br><br><b>Battery life keeps on going. So you can, too.</b><br> Even with the new thinner and lighter design, iPad has the same amazing 10-hour battery life.  That’s enough juice for one flight across the ocean, or one movie-watching all-nighter, or a week’s commute across town.  The power-efficient A5 chip and iOS keep battery life from fading away, so you can get carried away.<br><br><b>Two cameras.</b><br> You’ll see two cameras on iPad — one on the front and one on the back.  They may be tiny, but they’re a big deal.  They’re designed for FaceTime video calling, and they work together so you can talk to your favorite people and see them smile and laugh back at you. The front camera puts you and your friend face-to-face.  Switch to the back camera during your video call to share where you are, who you’re with, or what’s going on around you. When you’re not using FaceTime, let the back camera roll if you see something movie-worthy. It’s HD, so whatever you shoot is a mini-masterpiece. And you can take wacky snapshots in Photo Booth. It’s the most fun a face can have.<br><br><b>Due to the demand for this item, please allow up to 8-10 weeks for delivery</b>.]]></Description>
+                  <Points>10927</Points>
+                  <Category>Office &amp; Computer</Category>
+                  <Manufacturer>Apple</Manufacturer>
+                  <SmallImageURL>https://www.rewardstation.com/catalogimages/MC769LLA.gif</SmallImageURL>
+                  <LargeImageURL>https://www.rewardstation.com/catalogimages/MC769LLA.jpg</LargeImageURL>
+               </Product>
+               <Product>
+                  <ProductID>GS12005</ProductID>
+                  <Name>7100 Hybrid Bike- Men's</Name>
+                  <Description>The ride of your life. 21-speed bike is crafted with Alpha aluminum comfort-specific frame, front suspension fork with 50mm of travel, and suspension seat post. Features alloy direct-pull brakes with alloy levers, and quick-release seat and wheels.</Description>
+                  <Points>8897</Points>
+                  <Category>Bicycles</Category>
+                  <Manufacturer>Trek</Manufacturer>
+                  <SmallImageURL>https://www.rewardstation.com/catalogimages/GS12005.gif</SmallImageURL>
+                  <LargeImageURL>https://www.rewardstation.com/catalogimages/eps_17390.jpg</LargeImageURL>
+               </Product>
+               <Product>
+                  <ProductID>AW47071</ProductID>
+                  <Name>iPod touch® 8GB With FaceTime</Name>
+                  <Description>The newly redesigned iPod touch® 8GB comes with remarkable 960 x 640 resolution and a 3.5'' color, Multi-Touch Retina display. See friends while you talk to them with FaceTime. Shoot, edit and share stunning HD video. Play games against friends, or unknown foes, with the new Game Center.&lt;br/>&lt;br/>  Other capabilities include music, movies, TV shows, videos, games, applications, ebooks, audiobooks, podcasts, photos, Safari web browser, e-mail, maps, HD video recording and editing and built-in Nike + iPod support.</Description>
+                  <Points>4179</Points>
+                  <Category>Audio</Category>
+                  <Manufacturer>Apple</Manufacturer>
+                  <SmallImageURL>https://www.rewardstation.com/catalogimages/AW47071.gif</SmallImageURL>
+                  <LargeImageURL>https://www.rewardstation.com/catalogimages/eps_34731.jpg</LargeImageURL>
+               </Product>
+               <Product>
+                  <ProductID>AW23106</ProductID>
+                  <Name>Nuvi 1350 GPS</Name>
+                  <Description>This amazing personal navigation system uses a 4.3” color touchscreen display to guide you safely on your way, mile after mile. You’ll get turn-by-turn directions with spoken street names, lane assist for smoother exits and a feature that helps you locate the nearest hospitals, police &amp; gas stations, as well as the nearest address and intersection. It’s also a world travel clock, calculator and currency and unit converter. Plus, you’ll welcome its route avoidance features and auto re-route capabilities to recalculate your trip when you encounter a detour. The ecoRoute™ feature will calculate a more fuel-efficient route, too.</Description>
+                  <Points>3448</Points>
+                  <Category>GPS</Category>
+                  <Manufacturer>Garmin</Manufacturer>
+                  <SmallImageURL>https://www.rewardstation.com/catalogimages/AW23106.gif</SmallImageURL>
+                  <LargeImageURL>https://www.rewardstation.com/catalogimages/eps_15144.jpg</LargeImageURL>
+               </Product>
+               <Product>
+                  <ProductID>AW25813</ProductID>
+                  <Name>Oakley Flak Jacket</Name>
+                  <Description>These cutting-edge, super stylish sunglasses feature Oakley’s Hydrophobic™ permanent coating that prevents rain and sweat from building up on the lens, as well as the unbeatable clarity of High Definition Optics®. Two sets of nose pads are included, for the best fit, and Oakley’s Three-Point Fit optimizes comfort and holds the lenses in precise optical alignment for superior clarity.</Description>
+                  <Points>3189</Points>
+                  <Category>Apparel</Category>
+                  <Manufacturer>Oakley</Manufacturer>
+                  <SmallImageURL>https://www.rewardstation.com/catalogimages/AW25813.gif</SmallImageURL>
+                  <LargeImageURL>https://www.rewardstation.com/catalogimages/eps_16126.jpg</LargeImageURL>
+               </Product>
+               <Product>
+                  <ProductID>AW28030</ProductID>
+                  <Name>Kitchen Storage Cart</Name>
+                  <Description>The solid beechwood worktop provides you with a handly food preparation surface on this rolling storage cart. A top drawer is underpinned by a large two-door cabinet. Handy towel bar on one side helps too. WxDxH: 25,5 x 19,25 x 34</Description>
+                  <Points>2849</Points>
+                  <Category>Furniture</Category>
+                  <Manufacturer>Winsome Wood</Manufacturer>
+                  <SmallImageURL>https://www.rewardstation.com/catalogimages/AW28030.gif</SmallImageURL>
+                  <LargeImageURL>https://www.rewardstation.com/catalogimages/eps_19548.jpg</LargeImageURL>
+               </Product>
+               <Product>
+                  <ProductID>AW41795</ProductID>
+                  <Name>New York Yankees 2009 World Series Framed Collage</Name>
+                  <Description>Commemorate the New York Yankees championship season with this 2009 World Series collectible. Each piece features one 8x10 and four 4x5 World Series photographs, a descriptive plate, Yankees logo art and actual game-used dirt from the World Series that has been double matted and framed in black wood. This product is officially licensed by Major League Baseball and comes with an individually numbered; tamper evident hologram. Overall dimensions are 23'' x 27''.</Description>
+                  <Points>2595</Points>
+                  <Category>Sports Memorabilia</Category>
+                  <Manufacturer>Mounted Memories</Manufacturer>
+                  <SmallImageURL>https://www.rewardstation.com/catalogimages/AW41795.gif</SmallImageURL>
+                  <LargeImageURL>https://www.rewardstation.com/catalogimages/eps_31105.jpg</LargeImageURL>
+               </Product>
+               <Product>
+                  <ProductID>AW27265</ProductID>
+                  <Name>WindTunnel® T-Series™ Bagless Upright Vacuum</Name>
+                  <Description>The WindTunnel® T-Series™ vacuums feature Hoover's patented Windtunnel® technology with air passages that trap dirt and channel it into the dirt cup, significantly minimizing blowback or scattering back onto the floor. While each model is lightweight, they offer full Hoover power for a deep down clean and no loss of suction. This hi-tech bagless vacuum has ingenious options, such as fingertip controls conveniently located within reach on the handle and a height adjustment feature to ensure roll brushes are at the proper height. A cord clip is just below the handle on the back side of the unit and it keeps the cord out of the way while cleaning. Requiring minimal maintenance, the WindTunnel® T-Series™ has a rinsable filter that can be easily cleaned under running water and a high quality HEPA filter - neither of which will need to be replaced with proper care. On-Board tools include Turbo brush, 12'' extension wand, crevice tool and upholstery/dust brush.</Description>
+                  <Points>2300</Points>
+                  <Category>Home/Indoor</Category>
+                  <Manufacturer>Hoover</Manufacturer>
+                  <SmallImageURL>https://www.rewardstation.com/catalogimages/AW27265.gif</SmallImageURL>
+                  <LargeImageURL>https://www.rewardstation.com/catalogimages/eps_16691.jpg</LargeImageURL>
+               </Product>
+               <Product>
+                  <ProductID>XTAA100</ProductID>
+                  <Name>American Airlines - $100 Travel Certificate</Name>
+                  <Description>It's hard to imagine a better gift than the gift of travel. AmericanAirlines Incentive TrAAvel® Flight Certificates and Gift Certificates offer limitless travel possibilities.  This award is for $100.  They can be combined and applied toward the purchase of any published fare on  American Airlines, American Eagle or AmericanConnection carriers. Gift Certificate recipients also earn AAdvantage miles when traveling.  American Airlines Gift Certificates cannot be replaced if lost or stolen.</Description>
+                  <Points>2027</Points>
+                  <Category>Travel</Category>
+                  <Manufacturer>American Airlines</Manufacturer>
+                  <SmallImageURL>https://www.rewardstation.com/catalogimages/XTAA100.GIF</SmallImageURL>
+                  <LargeImageURL>https://www.rewardstation.com/catalogimages/XTAA100.JPG</LargeImageURL>
+               </Product>
+               <Product>
+                  <ProductID>AW17989</ProductID>
+                  <Name>Pinot/Nebbiolo Wine Glasses - Set of 8</Name>
+                  <Description>This set of eight Pinot/Nebbiolo glasses is ideal for full-bodied red wines with high acidity and moderate tannins. The large bowl is a fitting shape for the wine's complex aroma, complimenting any tablescape.</Description>
+                  <Points>1926</Points>
+                  <Category>Glassware</Category>
+                  <Manufacturer>Riedel Wine Company</Manufacturer>
+                  <SmallImageURL>https://www.rewardstation.com/catalogimages/AW17989.gif</SmallImageURL>
+                  <LargeImageURL>https://www.rewardstation.com/catalogimages/eps_7512.jpg</LargeImageURL>
+               </Product>
+               <Product>
+                  <ProductID>AW46870</ProductID>
+                  <Name>Weekender Bag</Name>
+                  <Description>So good you'll want to plan a trip just to carry it. Everything tucks neatly away in the four interior or two front pockets. There's also a full zippered back pocket. Packing is a breeze thanks to a wide opening with double zippers and a sturdy removable base. Elegant metal hardware holds the 48-1/2'' removable strap.</Description>
+                  <Points>1722</Points>
+                  <Category>Bags &amp; Purses</Category>
+                  <Manufacturer>Vera Bradley</Manufacturer>
+                  <SmallImageURL>https://www.rewardstation.com/catalogimages/AW46870.gif</SmallImageURL>
+                  <LargeImageURL>https://www.rewardstation.com/catalogimages/eps_34313.jpg</LargeImageURL>
+               </Product>
+               <Product>
+                  <ProductID>AW51282</ProductID>
+                  <Name>Large Portable Pet Carrier</Name>
+                  <Description>Recommended for dogs up to 21.5' tall, this large pet carrier is perfect for air or car travel. Features include durable wire and resin construction, comfortable carry handle, easy access storage compartment and easy tool-free assembly. Includes food and water tray. Available in light taupe with brown and blue accents.</Description>
+                  <Points>1644</Points>
+                  <Category>Pet Supplies</Category>
+                  <Manufacturer>Suncast</Manufacturer>
+                  <SmallImageURL>https://www.rewardstation.com/catalogimages/AW51282.gif</SmallImageURL>
+                  <LargeImageURL>https://www.rewardstation.com/catalogimages/eps_39049.jpg</LargeImageURL>
+               </Product>
+               <Product>
+                  <ProductID>AW16219</ProductID>
+                  <Name>5.1 Channel DVD Player/Receiver Home Theater System</Name>
+                  <Description>This space saving system delivers a massive 300 watts of 5.1 sound from a surprisingly small set of components. Features a compact progressive scan DVD player, which handles all major CD/DVD formats. Other features include NTSC/PAL compatibility, convenient front panel display and multiple language, subtitle and camera angle support.</Description>
+                  <Points>1604</Points>
+                  <Category>TV &amp; Home Theater</Category>
+                  <Manufacturer>Coby</Manufacturer>
+                  <SmallImageURL>https://www.rewardstation.com/catalogimages/AW16219.gif</SmallImageURL>
+                  <LargeImageURL>https://www.rewardstation.com/catalogimages/eps_7608.jpg</LargeImageURL>
+               </Product>
+               <Product>
+                  <ProductID>GS11002</ProductID>
+                  <Name>Backyard Bonanza</Name>
+                  <Description>Family and friends will love this appetizing spread. Includes eight 4-oz. bold and beefy gourmet burgers, eight 4-oz. boneless chicken breasts, and eight 4-oz. boneless pork chops.</Description>
+                  <Points>1398</Points>
+                  <Category>Summer Sizzlers</Category>
+                  <Manufacturer>Omaha Steaks</Manufacturer>
+                  <SmallImageURL>https://www.rewardstation.com/catalogimages/GS11002.gif</SmallImageURL>
+                  <LargeImageURL>https://www.rewardstation.com/catalogimages/eps_1407.jpg</LargeImageURL>
+               </Product>
+               <Product>
+                  <ProductID>AW20807</ProductID>
+                  <Name>Eco-Friendly Bonded Leather Briefcase</Name>
+                  <Description>Perfect size for that last minute meeting! Features full grain lightweight Nappa leather, (2) Outside front zippered pockets, Main zipped compartment has full length interior zip pocket, Adjustable and removable shoulder straps</Description>
+                  <Points>1348</Points>
+                  <Category>Leather Goods</Category>
+                  <Manufacturer>Kluge</Manufacturer>
+                  <SmallImageURL>https://www.rewardstation.com/catalogimages/AW20807.gif</SmallImageURL>
+                  <LargeImageURL>https://www.rewardstation.com/catalogimages/eps_11467.jpg</LargeImageURL>
+               </Product>
+               <Product>
+                  <ProductID>GR40477</ProductID>
+                  <Name>Sundome® 3 Tent</Name>
+                  <Description>With a 52'' center height, the Sundome tent offers an oversized rear window and a window on the single-zipper door. Features WeatherTEC system and shock-corded fiberglass poles. Measures 6.29’ x 22.44’ x 6.29’. Sleeps three.</Description>
+                  <Points>1198</Points>
+                  <Category>Camping Equipment</Category>
+                  <Manufacturer>Coleman</Manufacturer>
+                  <SmallImageURL>https://www.rewardstation.com/catalogimages/GR40477.gif</SmallImageURL>
+                  <LargeImageURL>https://www.rewardstation.com/catalogimages/eps_15637.jpg</LargeImageURL>
+               </Product>
+               <Product>
+                  <ProductID>AW23055</ProductID>
+                  <Name>Get-A-Grip 10-Piece Nonstick Cookware Set</Name>
+                  <Description>Made from heavy-gauge aluminum that heats up quickly and evenly, as well as non-stick coatings that resist stains and odors and release food for simple cleanup, this is a great set of cookware that you’ll use every day. Other great features include silicone handles for a comfortable, slip-free grasp and tempered glass lids. The set includes one-quart covered saucepan, two-quart covered saucepan, five-quart covered Dutch oven, 8” sauté pan, 10” sauté pan, solid spoon and solid turner. Oven safe to 350 degrees.</Description>
+                  <Points>1145</Points>
+                  <Category>Kitchen</Category>
+                  <Manufacturer>Mirro</Manufacturer>
+                  <SmallImageURL>https://www.rewardstation.com/catalogimages/AW23055.gif</SmallImageURL>
+                  <LargeImageURL>https://www.rewardstation.com/catalogimages/eps_11516.jpg</LargeImageURL>
+               </Product>
+               <Product>
+                  <ProductID>AW22987</ProductID>
+                  <Name>Dual Handset Expandable Cordless Phone System with Digital Answering System and Caller ID</Name>
+                  <Description>DECT 6.0 technology is a newly available frequency band that provides improved range without needing to boost the power. The sound quality on DECT models is superior to existing models and enables the user to talk anywhere in their home or office without interference from a wireless network. Two handset systems provide the convenience of operating two handsets using only one phone jack and one base station. The second handset simply needs an electrical outlet to plug into. These systems also allow you to transfer calls, conference an outside call or use the intercom feature between handsets. Return phone calls and recall numbers with 50 name and number caller ID memory. With just the touch of a button, hands-free conversations are made easy with the handset speakerphone. Hearing aid compatible phones have a reduced noise and interference when used with most T-coil equipped hearing aids and cochlear implants. Expandable up to 12 handsets using only one phone jack. Wall mounting bracket included.</Description>
+                  <Points>1029</Points>
+                  <Category>Telephones</Category>
+                  <Manufacturer>Vtech</Manufacturer>
+                  <SmallImageURL>https://www.rewardstation.com/catalogimages/AW22987.jpg</SmallImageURL>
+                  <LargeImageURL>https://www.rewardstation.com/catalogimages/eps_33098.jpg</LargeImageURL>
+               </Product>
+               <Product>
+                  <ProductID>AW14749</ProductID>
+                  <Name>Contemporary 80-Square-Inch Grill</Name>
+                  <Description>George Foreman, the man behind the world’s best selling grill is back with a new, sleek indoor grill, angled to let the fat drip away and allowing you to eat healthier. The patented slope design and nonstick cooking surface allow fat and grease to drain off for higher fat reduction, healthier meals for the entire family and less smoke during cooking. Signature heating elements provide more even heat during cooking from the center to the sides of the plate and faster temperature recovery. Family sized 80-square-inch grilling surface has enough room for five burgers. The extended safe-touch handle is durable and protects hands from heat. Dishwasher safe accessories include unique spatula and drip tray.</Description>
+                  <Points>788</Points>
+                  <Category>Grills</Category>
+                  <Manufacturer>George Foreman</Manufacturer>
+                  <SmallImageURL>https://www.rewardstation.com/catalogimages/AW14749.gif</SmallImageURL>
+                  <LargeImageURL>https://www.rewardstation.com/catalogimages/eps_6858.jpg</LargeImageURL>
+               </Product>
+               <Product>
+                  <ProductID>AW42791</ProductID>
+                  <Name>3-Piece Carry-On Luggage Set</Name>
+                  <Description>Set features 20'' EVA rolling carry-on with convenient telescopic handle and ''in-line'' blade wheels, 14'' boarding tote with padded carry handle, and 10'' toiletry kit with roomy zippered compartment.  Black</Description>
+                  <Points>703</Points>
+                  <Category>Luggage</Category>
+                  <Manufacturer>Travelers Club</Manufacturer>
+                  <SmallImageURL>https://www.rewardstation.com/catalogimages/AW42791.gif</SmallImageURL>
+                  <LargeImageURL>https://www.rewardstation.com/catalogimages/eps_30423.jpg</LargeImageURL>
+               </Product>
+               <Product>
+                  <ProductID>AW42137</ProductID>
+                  <Name>SNAPP™ Mini Camcorder</Name>
+                  <Description>This pocket-sized digital camcorder lets you shoot video, take pictures and play back your files at the touch of a button on a brilliant 1.44'' LCD screen. A built-in SD/SDHC card slot offers expandable memory for more than two hours of recording time, and the integrated USB plug eliminates the need for cables. The easy-to-use ArcSoft® video editing software and YouTube™ uploader let you share your videos online in minutes. USB extension cable and hand strap also included.</Description>
+                  <Points>557</Points>
+                  <Category>Camcorders</Category>
+                  <Manufacturer>Coby</Manufacturer>
+                  <SmallImageURL>https://www.rewardstation.com/catalogimages/AW42137.gif</SmallImageURL>
+                  <LargeImageURL>https://www.rewardstation.com/catalogimages/eps_29740.jpg</LargeImageURL>
+               </Product>
+               <Product>
+                  <ProductID>AW21494</ProductID>
+                  <Name>Golds Gym Cardio Workout for Wii™</Name>
+                  <Description>Gold's Gym Cardio Workout brings your own personal Gold's Gym cardio trainer into your living room! Gold's Gym is the largest gym in the world and is known for leading the industry in personal training, so expect to get in shape fast. It's a fun way to exercise and maintain a healthy body. Features: A personal training experience: schedule workouts, track burned calories and body weight. Offers a more intense cardio workout than most Wii fitness games; includes exercises such as cardio boxing, running, sit-ups, and more. Tracks your progress and maintains a calendar of your exercise activity. Multiple training modes and fitness levels difficulty evolves as your fitness level increases. Compatible with the Wii Balance Board.</Description>
+                  <Points>523</Points>
+                  <Category>Toys &amp; Games</Category>
+                  <Manufacturer>Ubisoft</Manufacturer>
+                  <SmallImageURL>https://www.rewardstation.com/catalogimages/AW21494.gif</SmallImageURL>
+                  <LargeImageURL>https://www.rewardstation.com/catalogimages/eps_10420.jpg</LargeImageURL>
+               </Product>
+               <Product>
+                  <ProductID>AW21366</ProductID>
+                  <Name>PowerProtect™ with Surge Protection</Name>
+                  <Description>Keep your sensitive electronic equipment safe from the permanent damage of voltage spikes with this hardworking surge protector. Unlike standard units, this protector utilizes multiple layers of protection to respond to power surges in one billionth of a second.</Description>
+                  <Points>367</Points>
+                  <Category>Green &amp; Eco Friendly</Category>
+                  <Manufacturer>Monster Cable</Manufacturer>
+                  <SmallImageURL>https://www.rewardstation.com/catalogimages/AW21366.gif</SmallImageURL>
+                  <LargeImageURL>https://www.rewardstation.com/catalogimages/eps_10360.jpg</LargeImageURL>
+               </Product>
+               <Product>
+                  <ProductID>AW28825</ProductID>
+                  <Name>NCAA® Basketball</Name>
+                  <Description>NCAA® official size and weight all surface  basketball</Description>
+                  <Points>350</Points>
+                  <Category>Sporting Equipment</Category>
+                  <Manufacturer>Wilson</Manufacturer>
+                  <SmallImageURL>https://www.rewardstation.com/catalogimages/AW28825.gif</SmallImageURL>
+                  <LargeImageURL>https://www.rewardstation.com/catalogimages/eps_31113.jpg</LargeImageURL>
+               </Product>
+               <Product>
+                  <ProductID>AW35246</ProductID>
+                  <Name>Clipshot Digital Camera- Blue</Name>
+                  <Description>3 in 1- takes digital photos, video clips and can be used as a web camera for internet chatting. 8 MB internal memory for storing up to 138 digital photos. Super-small and lightweight- fits in the palm of your hand. Clips onto clothes or bag.  Need 1 AAA Battery (not included).</Description>
+                  <Points>333</Points>
+                  <Category>Cameras</Category>
+                  <Manufacturer>Vivitar</Manufacturer>
+                  <SmallImageURL>https://www.rewardstation.com/catalogimages/AW35246.gif</SmallImageURL>
+                  <LargeImageURL>https://www.rewardstation.com/catalogimages/eps_35970.jpg</LargeImageURL>
+               </Product>
+               <Product>
+                  <ProductID>AW47005</ProductID>
+                  <Name>Jillian Michaels' Shred It with Weights DVD</Name>
+                  <Description>TV’s favorite trainer brings her dynamic weight loss and body sculpting plan to your home, giving you a hard-core circuit training technique for a total body workout that’s designed to burn maximum fat. Using a kettlebell or single hand weight (not included), Jillian’s two levels of workouts will help you build lean muscle and burn mega calories.</Description>
+                  <Points>316</Points>
+                  <Category>Exercise</Category>
+                  <Manufacturer>Lionsgate</Manufacturer>
+                  <SmallImageURL>https://www.rewardstation.com/catalogimages/AW47005.gif</SmallImageURL>
+                  <LargeImageURL>https://www.rewardstation.com/catalogimages/eps_34998.jpg</LargeImageURL>
+               </Product>
+               <Product>
+                  <ProductID>AW20391</ProductID>
+                  <Name>Extreme Capacity Travel Mug</Name>
+                  <Description>Take your favorite drinks to go, and they’ll stay as hot or cold as when you poured them, thanks to the double wall foam insulation of this Thermos® stainless steel travel mug. Its patented design features an unbreakable 18/8 stainless steel exterior with an easy-to-clean plastic liner, a comfortable rubber grip and scratch-resistant base. Holds a full 16 ounces, has a screw-on, spill-resistant slide-lock lid and fits into most automobile cup holders. Carries a one-year manufacturer’s limited warranty.</Description>
+                  <Points>281</Points>
+                  <Category>Home/Outdoor</Category>
+                  <Manufacturer>Thermos</Manufacturer>
+                  <SmallImageURL>https://www.rewardstation.com/catalogimages/AW20391.gif</SmallImageURL>
+                  <LargeImageURL>https://www.rewardstation.com/catalogimages/eps_31023.jpg</LargeImageURL>
+               </Product>
+               <Product>
+                  <ProductID>AW46354</ProductID>
+                  <Name>Take-Out Time-Out Mats</Name>
+                  <Description>The award-winning Take-Out Time-Out mat is a portable time-out spot for teaching children acceptable behavior. The Supernanny, Nanny 911 and Dr. Phil all subscribe to the time-out method. They stress the importance of using a consistent spot for time-outs. This innovative product fits into a purse, bag or pocket, so you can set up a consistent time-out spot anywhere. The Take-Out Time-Out mat received the iParenting Media Award and on-air recommendations from Kelly Ripa.</Description>
+                  <Points>281</Points>
+                  <Category>Children</Category>
+                  <Manufacturer>Bright Products, Inc</Manufacturer>
+                  <SmallImageURL>https://www.rewardstation.com/catalogimages/AW46354.gif</SmallImageURL>
+                  <LargeImageURL>https://www.rewardstation.com/catalogimages/eps_33831.jpg</LargeImageURL>
+               </Product>
+               <Product>
+                  <ProductID>AW21351</ProductID>
+                  <Name>Golf Distance Scope</Name>
+                  <Description>This handy, rubber-coated monocular is calibrated up to 200 yards, so you can determine how far your golf ball is from the pin and select your clubs accordingly. Features ground and polished glass lenses, as well as a wrist strap and vinyl carrying case with belt loop. Measures 3-3/8” L x 1” Diameter.</Description>
+                  <Points>264</Points>
+                  <Category>Golf Equipment</Category>
+                  <Manufacturer>Sonnet</Manufacturer>
+                  <SmallImageURL>https://www.rewardstation.com/catalogimages/AW21351.gif</SmallImageURL>
+                  <LargeImageURL>https://www.rewardstation.com/catalogimages/eps_10428.jpg</LargeImageURL>
+               </Product>
+               <Product>
+                  <ProductID>AW47443</ProductID>
+                  <Name>Sterling Silver Hoops</Name>
+                  <Description>A classic addition to any jewelry collection.</Description>
+                  <Points>264</Points>
+                  <Category>Jewelry &amp; Watches</Category>
+                  <Manufacturer>Other</Manufacturer>
+                  <SmallImageURL>https://www.rewardstation.com/catalogimages/AW47443.gif</SmallImageURL>
+                  <LargeImageURL>https://www.rewardstation.com/catalogimages/eps_38500.jpg</LargeImageURL>
+               </Product>
+               <Product>
+                  <ProductID>AW30829</ProductID>
+                  <Name>Wine Tote</Name>
+                  <Description>This thoughtful and affordable tote takes the gift of wine to a new level. It accommodates two bottles and features a front pocket and comfortable shoulder strap. Made of 600D polyester. &lt;br>&lt;br>Dimensions: 11 1/2'' x 7'' x 3 1/2''</Description>
+                  <Points>249</Points>
+                  <Category>Food &amp; Wine</Category>
+                  <Manufacturer>Sunscope</Manufacturer>
+                  <SmallImageURL>https://www.rewardstation.com/catalogimages/AW30829.gif</SmallImageURL>
+                  <LargeImageURL>https://www.rewardstation.com/catalogimages/eps_30503.jpg</LargeImageURL>
+               </Product>
+               <Product>
+                  <ProductID>AW21342</ProductID>
+                  <Name>Car Charger for USB Items</Name>
+                  <Description>Now you can power or charge all your USB 2.0 devices when you’re out on the road. This all-in-one USB power source plugs right into your car lighter and provides power and charging for your iPod®, MP3/4 player, cell phone or more! With LED operation indicator light.</Description>
+                  <Points>212</Points>
+                  <Category>Cars &amp; Motorcycles</Category>
+                  <Manufacturer>Impulse</Manufacturer>
+                  <SmallImageURL>https://www.rewardstation.com/catalogimages/AW21342.gif</SmallImageURL>
+                  <LargeImageURL>https://www.rewardstation.com/catalogimages/eps_10345.jpg</LargeImageURL>
+               </Product>
+               <Product>
+                  <ProductID>AW21350</ProductID>
+                  <Name>4x30 Binoculars</Name>
+                  <Description>Sturdily constructed and clad in soft rubber, these folding binoculars feature a blue-coated lens and center focus. They fold up for easy carrying and include a case with a belt loop and neck strap. Measure 1-3/4” H x 3-3/4” W x 3-1/2” D.</Description>
+                  <Points>195</Points>
+                  <Category>Binoculars &amp; Telescopes</Category>
+                  <Manufacturer>Sonnet</Manufacturer>
+                  <SmallImageURL>https://www.rewardstation.com/catalogimages/AW21350.gif</SmallImageURL>
+                  <LargeImageURL>https://www.rewardstation.com/catalogimages/eps_10426.jpg</LargeImageURL>
+               </Product>
+               <Product>
+                  <ProductID>AW30827</ProductID>
+                  <Name>6 Piece Manicure Set</Name>
+                  <Description>Compact 6 piece manicure kit. Features a nail clipper, nail file, safety scissors, cuticle tool and more! Packed in a zipper case.</Description>
+                  <Points>180</Points>
+                  <Category>Health &amp; Beauty</Category>
+                  <Manufacturer>Sunscope</Manufacturer>
+                  <SmallImageURL>https://www.rewardstation.com/catalogimages/AW30827.gif</SmallImageURL>
+                  <LargeImageURL>https://www.rewardstation.com/catalogimages/eps_30504.jpg</LargeImageURL>
+               </Product>
+               <Product>
+                  <ProductID>AW22841</ProductID>
+                  <Name>LED Hand Powered Flashlight</Name>
+                  <Description>No batteries required. Simply squeeze the crank handle to charge for up to 15 minutes of light.</Description>
+                  <Points>178</Points>
+                  <Category>Tools</Category>
+                  <Manufacturer>Other</Manufacturer>
+                  <SmallImageURL>https://www.rewardstation.com/catalogimages/AW22841.gif</SmallImageURL>
+                  <LargeImageURL>https://www.rewardstation.com/catalogimages/eps_11607.jpg</LargeImageURL>
+               </Product>
+            </Products>
+            <ErrorMessage/>
+         </ReturnPopularProductsResult>
+      </ReturnPopularProductsResponse>
+   </soap:Body>
+</soap:Envelope>

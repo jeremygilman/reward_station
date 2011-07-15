@@ -1,0 +1,12 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <soap:Body>
+      <ReturnPointSummaryResponse xmlns="http://rswebservices.rewardstation.com/">
+         <ReturnPointSummaryResult>
+            <ClientID>10080</ClientID>
+            <ActiveOnly>false</ActiveOnly>
+            <UserID>577</UserID>
+            <ErrorMessage>Invalid Token</ErrorMessage>
+         </ReturnPointSummaryResult>
+      </ReturnPointSummaryResponse>
+   </soap:Body>
+</soap:Envelope>

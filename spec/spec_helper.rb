@@ -1,5 +1,9 @@
+require 'bundler'
+Bundler.setup
+
 require 'rubygems'
-require 'bundler/setup'
+
+require 'savon'
 
 require 'reward_station'
 

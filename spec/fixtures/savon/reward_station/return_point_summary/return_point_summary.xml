@@ -1,0 +1,22 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <soap:Body>
+      <ReturnPointSummaryResponse xmlns="http://rswebservices.rewardstation.com/">
+         <ReturnPointSummaryResult>
+            <ClientID>100080</ClientID>
+            <ActiveOnly>false</ActiveOnly>
+            <UserID>577</UserID>
+            <PointSummaryCollection>
+               <PointSummary>
+                  <UserID>577</UserID>
+                  <IsActive>true</IsActive>
+                  <PointsEarned>465</PointsEarned>
+                  <PointsRedeemed>0</PointsRedeemed>
+                  <PointsCredited>0</PointsCredited>
+                  <PointsBalance>465</PointsBalance>
+               </PointSummary>
+            </PointSummaryCollection>
+            <ErrorMessage/>
+         </ReturnPointSummaryResult>
+      </ReturnPointSummaryResponse>
+   </soap:Body>
+</soap:Envelope>

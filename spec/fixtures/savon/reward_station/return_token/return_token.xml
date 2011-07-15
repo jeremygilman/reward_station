@@ -1,0 +1,10 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <soap:Body>
+      <ReturnTokenResponse xmlns="http://rswebservices.rewardstation.com/">
+         <ReturnTokenResult>
+            <Token>e285e1ed-2356-4676-a554-99d79e6284b0</Token>
+            <ErrorMessage/>
+         </ReturnTokenResult>
+      </ReturnTokenResponse>
+   </soap:Body>
+</soap:Envelope>
