@@ -1,0 +1,511 @@
+<wsdl:definitions targetNamespace="http://rswebservices.rewardstation.com/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://rswebservices.rewardstation.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+   <wsdl:types>
+      <s:schema elementFormDefault="qualified" targetNamespace="http://rswebservices.rewardstation.com/">
+         <s:element name="ReturnToken">
+            <s:complexType>
+               <s:sequence>
+                  <s:element minOccurs="1" maxOccurs="1" name="AccountNumber" type="s:int"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="AccountCode" type="s:string"/>
+               </s:sequence>
+            </s:complexType>
+         </s:element>
+         <s:element name="ReturnTokenResponse">
+            <s:complexType>
+               <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="1" name="ReturnTokenResult" type="tns:WebServiceToken"/>
+               </s:sequence>
+            </s:complexType>
+         </s:element>
+         <s:complexType name="WebServiceToken">
+            <s:sequence>
+               <s:element minOccurs="0" maxOccurs="1" name="Token" type="s:string"/>
+               <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string"/>
+            </s:sequence>
+         </s:complexType>
+         <s:element name="AuthenticateUser">
+            <s:complexType>
+               <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="EncryptedPassword" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="Token" type="s:string"/>
+               </s:sequence>
+            </s:complexType>
+         </s:element>
+         <s:element name="AuthenticateUserResponse">
+            <s:complexType>
+               <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="1" name="AuthenticateUserResult" type="tns:AuthenticateUserResult"/>
+               </s:sequence>
+            </s:complexType>
+         </s:element>
+         <s:complexType name="AuthenticateUserResult">
+            <s:sequence>
+               <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string"/>
+               <s:element minOccurs="0" maxOccurs="1" name="EncryptedPassword" type="s:string"/>
+               <s:element minOccurs="0" maxOccurs="1" name="UserProfile" type="tns:User"/>
+               <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string"/>
+            </s:sequence>
+         </s:complexType>
+         <s:complexType name="User">
+            <s:sequence>
+               <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int"/>
+               <s:element minOccurs="1" maxOccurs="1" name="ClientID" type="s:int"/>
+               <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string"/>
+               <s:element minOccurs="0" maxOccurs="1" name="EncryptedPassword" type="s:string"/>
+               <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string"/>
+               <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string"/>
+               <s:element minOccurs="0" maxOccurs="1" name="AddressOne" type="s:string"/>
+               <s:element minOccurs="0" maxOccurs="1" name="AddressTwo" type="s:string"/>
+               <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string"/>
+               <s:element minOccurs="0" maxOccurs="1" name="StateCode" type="s:string"/>
+               <s:element minOccurs="0" maxOccurs="1" name="Province" type="s:string"/>
+               <s:element minOccurs="0" maxOccurs="1" name="PostalCode" type="s:string"/>
+               <s:element minOccurs="0" maxOccurs="1" name="CountryCode" type="s:string"/>
+               <s:element minOccurs="0" maxOccurs="1" name="Phone" type="s:string"/>
+               <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string"/>
+               <s:element minOccurs="1" maxOccurs="1" name="OrganizationID" type="s:int"/>
+               <s:element minOccurs="0" maxOccurs="1" name="OrganizationName" type="s:string"/>
+               <s:element minOccurs="1" maxOccurs="1" name="RepTypeID" type="s:int"/>
+               <s:element minOccurs="1" maxOccurs="1" name="ClientRegionID" type="s:int"/>
+               <s:element minOccurs="1" maxOccurs="1" name="IsActive" type="s:boolean"/>
+               <s:element minOccurs="1" maxOccurs="1" name="PointBalance" type="s:int"/>
+               <s:element minOccurs="1" maxOccurs="1" name="ManagerID" type="s:int"/>
+               <s:element minOccurs="0" maxOccurs="1" name="ManagerName" type="s:string"/>
+               <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string"/>
+            </s:sequence>
+         </s:complexType>
+         <s:element name="ReturnUser">
+            <s:complexType>
+               <s:sequence>
+                  <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="Token" type="s:string"/>
+               </s:sequence>
+            </s:complexType>
+         </s:element>
+         <s:element name="ReturnUserResponse">
+            <s:complexType>
+               <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="1" name="ReturnUserResult" type="tns:ReturnUserResult"/>
+               </s:sequence>
+            </s:complexType>
+         </s:element>
+         <s:complexType name="ReturnUserResult">
+            <s:sequence>
+               <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int"/>
+               <s:element minOccurs="0" maxOccurs="1" name="UserProfile" type="tns:User"/>
+               <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string"/>
+            </s:sequence>
+         </s:complexType>
+         <s:element name="UpdateUser">
+            <s:complexType>
+               <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="1" name="updateUser" type="tns:User"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="Token" type="s:string"/>
+               </s:sequence>
+            </s:complexType>
+         </s:element>
+         <s:element name="UpdateUserResponse">
+            <s:complexType>
+               <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="1" name="UpdateUserResult" type="tns:UpdateUserResult"/>
+               </s:sequence>
+            </s:complexType>
+         </s:element>
+         <s:complexType name="UpdateUserResult">
+            <s:sequence>
+               <s:element minOccurs="0" maxOccurs="1" name="UpdateUser" type="tns:User"/>
+               <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string"/>
+            </s:sequence>
+         </s:complexType>
+         <s:element name="AwardPoints">
+            <s:complexType>
+               <s:sequence>
+                  <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int"/>
+                  <s:element minOccurs="1" maxOccurs="1" name="Points" type="s:int"/>
+                  <s:element minOccurs="1" maxOccurs="1" name="ProgramID" type="s:int"/>
+                  <s:element minOccurs="1" maxOccurs="1" name="PointReasonCodeID" type="s:int"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="Token" type="s:string"/>
+               </s:sequence>
+            </s:complexType>
+         </s:element>
+         <s:element name="AwardPointsResponse">
+            <s:complexType>
+               <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="1" name="AwardPointsResult" type="tns:AwardPointsResult"/>
+               </s:sequence>
+            </s:complexType>
+         </s:element>
+         <s:complexType name="AwardPointsResult">
+            <s:sequence>
+               <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int"/>
+               <s:element minOccurs="1" maxOccurs="1" name="Points" type="s:int"/>
+               <s:element minOccurs="0" maxOccurs="1" name="ConfirmationNumber" type="s:string"/>
+               <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string"/>
+            </s:sequence>
+         </s:complexType>
+         <s:element name="ReturnPointSummary">
+            <s:complexType>
+               <s:sequence>
+                  <s:element minOccurs="1" maxOccurs="1" name="clientId" type="s:int"/>
+                  <s:element minOccurs="1" maxOccurs="1" name="activeOnly" type="s:boolean"/>
+                  <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="Token" type="s:string"/>
+               </s:sequence>
+            </s:complexType>
+         </s:element>
+         <s:element name="ReturnPointSummaryResponse">
+            <s:complexType>
+               <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="1" name="ReturnPointSummaryResult" type="tns:PointSummaryResult"/>
+               </s:sequence>
+            </s:complexType>
+         </s:element>
+         <s:complexType name="PointSummaryResult">
+            <s:sequence>
+               <s:element minOccurs="1" maxOccurs="1" name="ClientID" type="s:int"/>
+               <s:element minOccurs="1" maxOccurs="1" name="ActiveOnly" type="s:boolean"/>
+               <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int"/>
+               <s:element minOccurs="0" maxOccurs="1" name="PointSummaryCollection" type="tns:ArrayOfPointSummary"/>
+               <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string"/>
+            </s:sequence>
+         </s:complexType>
+         <s:complexType name="ArrayOfPointSummary">
+            <s:sequence>
+               <s:element minOccurs="0" maxOccurs="unbounded" name="PointSummary" nillable="true" type="tns:PointSummary"/>
+            </s:sequence>
+         </s:complexType>
+         <s:complexType name="PointSummary">
+            <s:sequence>
+               <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int"/>
+               <s:element minOccurs="1" maxOccurs="1" name="IsActive" type="s:boolean"/>
+               <s:element minOccurs="1" maxOccurs="1" name="PointsEarned" type="s:int"/>
+               <s:element minOccurs="1" maxOccurs="1" name="PointsRedeemed" type="s:int"/>
+               <s:element minOccurs="1" maxOccurs="1" name="PointsCredited" type="s:int"/>
+               <s:element minOccurs="1" maxOccurs="1" name="PointsBalance" type="s:int"/>
+            </s:sequence>
+         </s:complexType>
+         <s:element name="ReturnPopularProducts">
+            <s:complexType>
+               <s:sequence>
+                  <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="Token" type="s:string"/>
+               </s:sequence>
+            </s:complexType>
+         </s:element>
+         <s:element name="ReturnPopularProductsResponse">
+            <s:complexType>
+               <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="1" name="ReturnPopularProductsResult" type="tns:PopularProductsResult"/>
+               </s:sequence>
+            </s:complexType>
+         </s:element>
+         <s:complexType name="PopularProductsResult">
+            <s:sequence>
+               <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int"/>
+               <s:element minOccurs="0" maxOccurs="1" name="Products" type="tns:ArrayOfProduct"/>
+               <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string"/>
+            </s:sequence>
+         </s:complexType>
+         <s:complexType name="ArrayOfProduct">
+            <s:sequence>
+               <s:element minOccurs="0" maxOccurs="unbounded" name="Product" nillable="true" type="tns:Product"/>
+            </s:sequence>
+         </s:complexType>
+         <s:complexType name="Product">
+            <s:sequence>
+               <s:element minOccurs="0" maxOccurs="1" name="ProductID" type="s:string"/>
+               <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string"/>
+               <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string"/>
+               <s:element minOccurs="1" maxOccurs="1" name="Points" type="s:int"/>
+               <s:element minOccurs="0" maxOccurs="1" name="Category" type="s:string"/>
+               <s:element minOccurs="0" maxOccurs="1" name="Manufacturer" type="s:string"/>
+               <s:element minOccurs="0" maxOccurs="1" name="SmallImageURL" type="s:string"/>
+               <s:element minOccurs="0" maxOccurs="1" name="LargeImageURL" type="s:string"/>
+            </s:sequence>
+         </s:complexType>
+         <s:element name="ReturnUserQuizzes">
+            <s:complexType>
+               <s:sequence>
+                  <s:element minOccurs="1" maxOccurs="1" name="clientId" type="s:int"/>
+                  <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="Token" type="s:string"/>
+               </s:sequence>
+            </s:complexType>
+         </s:element>
+         <s:element name="ReturnUserQuizzesResponse">
+            <s:complexType>
+               <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="1" name="ReturnUserQuizzesResult" type="tns:UserQuizResult"/>
+               </s:sequence>
+            </s:complexType>
+         </s:element>
+         <s:complexType name="UserQuizResult">
+            <s:sequence>
+               <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int"/>
+               <s:element minOccurs="0" maxOccurs="1" name="UserQuizCollection" type="tns:ArrayOfUserQuiz"/>
+               <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string"/>
+            </s:sequence>
+         </s:complexType>
+         <s:complexType name="ArrayOfUserQuiz">
+            <s:sequence>
+               <s:element minOccurs="0" maxOccurs="unbounded" name="UserQuiz" nillable="true" type="tns:UserQuiz"/>
+            </s:sequence>
+         </s:complexType>
+         <s:complexType name="UserQuiz">
+            <s:sequence>
+               <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int"/>
+               <s:element minOccurs="1" maxOccurs="1" name="QuizID" type="s:int"/>
+               <s:element minOccurs="0" maxOccurs="1" name="QuizName" type="s:string"/>
+               <s:element minOccurs="1" maxOccurs="1" name="StartDate" type="s:dateTime"/>
+               <s:element minOccurs="1" maxOccurs="1" name="EndDate" type="s:dateTime"/>
+               <s:element minOccurs="1" maxOccurs="1" name="MaximumAttempts" type="s:int"/>
+               <s:element minOccurs="1" maxOccurs="1" name="TimesAttempted" type="s:int"/>
+               <s:element minOccurs="1" maxOccurs="1" name="QuizPassed" type="s:boolean"/>
+               <s:element minOccurs="1" maxOccurs="1" name="PointsEarned" type="s:int"/>
+               <s:element minOccurs="1" maxOccurs="1" name="AvailableAttempts" type="s:int"/>
+            </s:sequence>
+         </s:complexType>
+      </s:schema>
+   </wsdl:types>
+   <wsdl:message name="ReturnTokenSoapIn">
+      <wsdl:part name="parameters" element="tns:ReturnToken"/>
+   </wsdl:message>
+   <wsdl:message name="ReturnTokenSoapOut">
+      <wsdl:part name="parameters" element="tns:ReturnTokenResponse"/>
+   </wsdl:message>
+   <wsdl:message name="AuthenticateUserSoapIn">
+      <wsdl:part name="parameters" element="tns:AuthenticateUser"/>
+   </wsdl:message>
+   <wsdl:message name="AuthenticateUserSoapOut">
+      <wsdl:part name="parameters" element="tns:AuthenticateUserResponse"/>
+   </wsdl:message>
+   <wsdl:message name="ReturnUserSoapIn">
+      <wsdl:part name="parameters" element="tns:ReturnUser"/>
+   </wsdl:message>
+   <wsdl:message name="ReturnUserSoapOut">
+      <wsdl:part name="parameters" element="tns:ReturnUserResponse"/>
+   </wsdl:message>
+   <wsdl:message name="UpdateUserSoapIn">
+      <wsdl:part name="parameters" element="tns:UpdateUser"/>
+   </wsdl:message>
+   <wsdl:message name="UpdateUserSoapOut">
+      <wsdl:part name="parameters" element="tns:UpdateUserResponse"/>
+   </wsdl:message>
+   <wsdl:message name="AwardPointsSoapIn">
+      <wsdl:part name="parameters" element="tns:AwardPoints"/>
+   </wsdl:message>
+   <wsdl:message name="AwardPointsSoapOut">
+      <wsdl:part name="parameters" element="tns:AwardPointsResponse"/>
+   </wsdl:message>
+   <wsdl:message name="ReturnPointSummarySoapIn">
+      <wsdl:part name="parameters" element="tns:ReturnPointSummary"/>
+   </wsdl:message>
+   <wsdl:message name="ReturnPointSummarySoapOut">
+      <wsdl:part name="parameters" element="tns:ReturnPointSummaryResponse"/>
+   </wsdl:message>
+   <wsdl:message name="ReturnPopularProductsSoapIn">
+      <wsdl:part name="parameters" element="tns:ReturnPopularProducts"/>
+   </wsdl:message>
+   <wsdl:message name="ReturnPopularProductsSoapOut">
+      <wsdl:part name="parameters" element="tns:ReturnPopularProductsResponse"/>
+   </wsdl:message>
+   <wsdl:message name="ReturnUserQuizzesSoapIn">
+      <wsdl:part name="parameters" element="tns:ReturnUserQuizzes"/>
+   </wsdl:message>
+   <wsdl:message name="ReturnUserQuizzesSoapOut">
+      <wsdl:part name="parameters" element="tns:ReturnUserQuizzesResponse"/>
+   </wsdl:message>
+   <wsdl:portType name="RewardServicesSoap">
+      <wsdl:operation name="ReturnToken">
+         <wsdl:input message="tns:ReturnTokenSoapIn"/>
+         <wsdl:output message="tns:ReturnTokenSoapOut"/>
+      </wsdl:operation>
+      <wsdl:operation name="AuthenticateUser">
+         <wsdl:input message="tns:AuthenticateUserSoapIn"/>
+         <wsdl:output message="tns:AuthenticateUserSoapOut"/>
+      </wsdl:operation>
+      <wsdl:operation name="ReturnUser">
+         <wsdl:input message="tns:ReturnUserSoapIn"/>
+         <wsdl:output message="tns:ReturnUserSoapOut"/>
+      </wsdl:operation>
+      <wsdl:operation name="UpdateUser">
+         <wsdl:input message="tns:UpdateUserSoapIn"/>
+         <wsdl:output message="tns:UpdateUserSoapOut"/>
+      </wsdl:operation>
+      <wsdl:operation name="AwardPoints">
+         <wsdl:input message="tns:AwardPointsSoapIn"/>
+         <wsdl:output message="tns:AwardPointsSoapOut"/>
+      </wsdl:operation>
+      <wsdl:operation name="ReturnPointSummary">
+         <wsdl:input message="tns:ReturnPointSummarySoapIn"/>
+         <wsdl:output message="tns:ReturnPointSummarySoapOut"/>
+      </wsdl:operation>
+      <wsdl:operation name="ReturnPopularProducts">
+         <wsdl:input message="tns:ReturnPopularProductsSoapIn"/>
+         <wsdl:output message="tns:ReturnPopularProductsSoapOut"/>
+      </wsdl:operation>
+      <wsdl:operation name="ReturnUserQuizzes">
+         <wsdl:input message="tns:ReturnUserQuizzesSoapIn"/>
+         <wsdl:output message="tns:ReturnUserQuizzesSoapOut"/>
+      </wsdl:operation>
+   </wsdl:portType>
+   <wsdl:binding name="RewardServicesSoap" type="tns:RewardServicesSoap">
+      <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+      <wsdl:operation name="ReturnToken">
+         <soap:operation soapAction="http://rswebservices.rewardstation.com/ReturnToken" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="AuthenticateUser">
+         <soap:operation soapAction="http://rswebservices.rewardstation.com/AuthenticateUser" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="ReturnUser">
+         <soap:operation soapAction="http://rswebservices.rewardstation.com/ReturnUser" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="UpdateUser">
+         <soap:operation soapAction="http://rswebservices.rewardstation.com/UpdateUser" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="AwardPoints">
+         <soap:operation soapAction="http://rswebservices.rewardstation.com/AwardPoints" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="ReturnPointSummary">
+         <soap:operation soapAction="http://rswebservices.rewardstation.com/ReturnPointSummary" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="ReturnPopularProducts">
+         <soap:operation soapAction="http://rswebservices.rewardstation.com/ReturnPopularProducts" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="ReturnUserQuizzes">
+         <soap:operation soapAction="http://rswebservices.rewardstation.com/ReturnUserQuizzes" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+      </wsdl:operation>
+   </wsdl:binding>
+   <wsdl:binding name="RewardServicesSoap12" type="tns:RewardServicesSoap">
+      <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+      <wsdl:operation name="ReturnToken">
+         <soap12:operation soapAction="http://rswebservices.rewardstation.com/ReturnToken" style="document"/>
+         <wsdl:input>
+            <soap12:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap12:body use="literal"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="AuthenticateUser">
+         <soap12:operation soapAction="http://rswebservices.rewardstation.com/AuthenticateUser" style="document"/>
+         <wsdl:input>
+            <soap12:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap12:body use="literal"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="ReturnUser">
+         <soap12:operation soapAction="http://rswebservices.rewardstation.com/ReturnUser" style="document"/>
+         <wsdl:input>
+            <soap12:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap12:body use="literal"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="UpdateUser">
+         <soap12:operation soapAction="http://rswebservices.rewardstation.com/UpdateUser" style="document"/>
+         <wsdl:input>
+            <soap12:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap12:body use="literal"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="AwardPoints">
+         <soap12:operation soapAction="http://rswebservices.rewardstation.com/AwardPoints" style="document"/>
+         <wsdl:input>
+            <soap12:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap12:body use="literal"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="ReturnPointSummary">
+         <soap12:operation soapAction="http://rswebservices.rewardstation.com/ReturnPointSummary" style="document"/>
+         <wsdl:input>
+            <soap12:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap12:body use="literal"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="ReturnPopularProducts">
+         <soap12:operation soapAction="http://rswebservices.rewardstation.com/ReturnPopularProducts" style="document"/>
+         <wsdl:input>
+            <soap12:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap12:body use="literal"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="ReturnUserQuizzes">
+         <soap12:operation soapAction="http://rswebservices.rewardstation.com/ReturnUserQuizzes" style="document"/>
+         <wsdl:input>
+            <soap12:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap12:body use="literal"/>
+         </wsdl:output>
+      </wsdl:operation>
+   </wsdl:binding>
+   <wsdl:service name="RewardServices">
+      <wsdl:port name="RewardServicesSoap" binding="tns:RewardServicesSoap">
+         <soap:address location="http://rswebservices.rewardstation.net/RewardServices.asmx"/>
+      </wsdl:port>
+      <wsdl:port name="RewardServicesSoap12" binding="tns:RewardServicesSoap12">
+         <soap12:address location="http://rswebservices.rewardstation.net/RewardServices.asmx"/>
+      </wsdl:port>
+   </wsdl:service>
+</wsdl:definitions>
