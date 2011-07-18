@@ -4,34 +4,27 @@
 ## Basic Usage
 
 
-## SSO
+## Single-Sign-On
 
-    #session_controller
+Basic SSO logic implemented in SAML::AuthResponse class. Example usage of AuthResponse:
+
+#SessionController
 
     require 'saml/auth_response'
 
     class SessionController < ApplicationController
-      skip_before_filter :require_user, :only => [:new, :create, :signon]
-      skip_before_filter :require_no_deactivated!
-
-      def new
-        return redirect_to(root_url) if current_user.present?
-        @user_session = UserSession.new
-      end
 
       def create
         @user_session = UserSession.new(params[:user_session])
         if @user_session.save
-          if session[:saml_request].present?
-            sso_params(session[:saml_request], session[:relay_state], current_user)
-            session[:saml_request] = session[:relay_state] = nil
-            render :template => "session/signon"
-            return
-          else
-            redirect_to_landing_page
-          end
-        else
-          render :action => :new
+            if session[:saml_request].present?
+                sso_params(session[:saml_request], session[:relay_state], current_user)
+                session[:saml_request] = session[:relay_state] = nil
+                render :template => "session/signon"
+                return
+             ...
+            end
+          ...
         end
       end
 
@@ -60,11 +53,11 @@
       end
     end
 
-    # session/signon.html.erb
+# signon.html.erb
 
     <html>
       <body>
-        <form method="post" action="<%= Settings.sso.sp_destination %>?binding=urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" id="sso_form">
+        <form  id="sso_form" action="http://www6.rewardstation.net/sso/100080/AssertionService.aspx?binding=urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" method="post">
           <input type="hidden" name="SAMLResponse" value="<%= @saml_response %>"/>
           <input type="hidden" name="RelayState" value="<%= @relay_state %>"/>
         </form>
