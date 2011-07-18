@@ -1,10 +1,6 @@
 module RewardStation
   class Service
 
-    def new_token_callback &block
-      @new_token_callback = block
-    end
-
     def initialize options = {}
       [:client_id, :client_password].each do |arg|
         raise ArgumentError, "Missing required option '#{arg}'" unless options.has_key? arg
@@ -23,12 +19,31 @@ module RewardStation
         @new_token_callback = options[:new_token_callback]
       end
 
+      @mode = :default
+      if options[:mode]
+        raise ArgumentError, "supported modes :default and :mock" unless [:mock, :default].include?(options[:mode].to_sym)
+        @mode = options[:mode].to_sym
+      end
     end
 
-    def self.client
-      @@client ||= Savon::Client.new do |wsdl|
-        wsdl.document = File.join(File.dirname(__FILE__), '..', 'wsdl', 'reward_services.xml')
+    def new_token_callback &block
+      @new_token_callback = block
+    end
+
+    class << self
+      def client
+        @@client ||= Savon::Client.new do |wsdl|
+          wsdl.document = File.join(File.dirname(__FILE__), '..', 'wsdl', 'reward_services.xml')
+        end
       end
+
+      def logger
+        @@logger ||= defined?(Rails) ? Rails.logger : Logger.new(STDOUT)
+      end
+    end
+
+    def logger
+      Service.logger
     end
 
     def return_token
@@ -37,7 +52,7 @@ module RewardStation
           'AccountCode' => @client_password
       }
 
-      puts "xceleration token #{result[:token]}"
+      logger.info "xceleration token #{result[:token]}"
 
       result[:token]
     end
@@ -100,12 +115,16 @@ module RewardStation
 
     protected
 
+    def mock?
+      @mode == :mock
+    end
+
     def update_token
       @token = return_token
       @new_token_callback.call(@token) if @new_token_callback
     end
 
-    def inject_token params
+    def inject_token params = {}
       (params[:body] ||= {})['Token'] = @token
     end
 
@@ -120,9 +139,14 @@ module RewardStation
     end
 
     def request method_name, params
+
+      if mock?
+        #TODO
+      end
+
       response = Service.client.request(:wsdl, method_name , params).to_hash
 
-      puts response.inspect
+      logger.debug response.inspect
 
       result = response[:"#{method_name}_response"][:"#{method_name}_result"]
 
@@ -135,8 +159,8 @@ module RewardStation
 
       result
     rescue Savon::SOAP::Fault, Savon::HTTP::Error => ex
-      puts ex.to_s
-      puts ex.backtrace.inspect
+      logger.error ex.to_s
+      logger.error ex.backtrace.inspect
       raise ConnectionError.new
     end
   end

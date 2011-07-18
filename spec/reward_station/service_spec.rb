@@ -2,10 +2,6 @@ require 'spec_helper'
 
 describe RewardStation::Service do
 
-  before(:all) {
-    Savon::Spec::Fixture.path = File.join(File.dirname(__FILE__), "..", "fixtures", "savon", "reward_station").to_s
-  }
-
   let(:service) { RewardStation::Service.new :client_id => '100080', :client_password => 'fM6Rv4moz#', :token => "e285e1ed-2356-4676-a554-99d79e6284b0" }
 
   describe "required options" do
