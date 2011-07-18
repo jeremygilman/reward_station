@@ -1,12 +1,12 @@
 require 'spec_helper'
 
-describe Xceleration::RewardStation do
+describe RewardStation::Service do
 
   before(:all) {
     Savon::Spec::Fixture.path = File.join(File.dirname(__FILE__), "..", "fixtures", "savon", "reward_station").to_s
   }
 
-  before(:each) { @service = Xceleration::RewardStation.new }
+  before(:each) { @service = RewardStation::Service.new }
 
   describe "return_token" do
 
@@ -19,7 +19,7 @@ describe Xceleration::RewardStation do
       end
 
       it "should not raise InvalidAccount exception" do
-        lambda{ @service.return_token('100080', 'fM6Rv4moz#') }.should_not raise_error(Xceleration::InvalidAccount)
+        lambda{ @service.return_token('100080', 'fM6Rv4moz#') }.should_not raise_error(RewardStation::InvalidAccount)
       end
     end
 
@@ -29,7 +29,7 @@ describe Xceleration::RewardStation do
       end
 
       it "should raise InvalidAccount exception" do
-        lambda{ @service.return_token('100080', 'fM6Rv4moz#') }.should raise_error(Xceleration::InvalidAccount)
+        lambda{ @service.return_token('100080', 'fM6Rv4moz#') }.should raise_error(RewardStation::InvalidAccount)
       end
     end
 
@@ -40,7 +40,7 @@ describe Xceleration::RewardStation do
       end
 
       it "should raise ConnectionError exception" do
-        lambda{ @service.return_token('100080', 'fM6Rv4moz#') }.should raise_error(Xceleration::ConnectionError)
+        lambda{ @service.return_token('100080', 'fM6Rv4moz#') }.should raise_error(RewardStation::ConnectionError)
       end
     end
 
@@ -50,7 +50,7 @@ describe Xceleration::RewardStation do
       end
 
       it "should raise HttpError exception" do
-        lambda{ @service.return_token('100080', 'fM6Rv4moz#') }.should raise_error(Xceleration::ConnectionError)
+        lambda{ @service.return_token('100080', 'fM6Rv4moz#') }.should raise_error(RewardStation::ConnectionError)
       end
     end
   end
@@ -66,7 +66,7 @@ describe Xceleration::RewardStation do
       end
 
       it "should not raise InvalidToken exception" do
-        lambda{ @service.award_points("e285e1ed-2356-4676-a554-99d79e6284b0", 130, 10, "Action 'Some' taken") }.should_not raise_error(Xceleration::InvalidToken)
+        lambda{ @service.award_points("e285e1ed-2356-4676-a554-99d79e6284b0", 130, 10, "Action 'Some' taken") }.should_not raise_error(RewardStation::InvalidToken)
       end
     end
 
@@ -76,7 +76,7 @@ describe Xceleration::RewardStation do
       end
 
       it "should raise InvalidToken exception" do
-        lambda{ @service.award_points("", 130, 10, "Action 'Some' taken") }.should raise_error(Xceleration::InvalidToken)
+        lambda{ @service.award_points("", 130, 10, "Action 'Some' taken") }.should raise_error(RewardStation::InvalidToken)
       end
     end
 
@@ -87,7 +87,7 @@ describe Xceleration::RewardStation do
       end
 
       it "should raise ConnectionError exception" do
-        lambda{ @service.award_points("e285e1ed-2356-4676-a554-99d79e6284b0", 130, 10, "Action 'Some' taken") }.should raise_error(Xceleration::ConnectionError)
+        lambda{ @service.award_points("e285e1ed-2356-4676-a554-99d79e6284b0", 130, 10, "Action 'Some' taken") }.should raise_error(RewardStation::ConnectionError)
       end
     end
 
@@ -97,7 +97,7 @@ describe Xceleration::RewardStation do
       end
 
       it "should raise HttpError exception" do
-        lambda{ @service.award_points("e285e1ed-2356-4676-a554-99d79e6284b0", 130, 10, "Action 'Some' taken") }.should raise_error(Xceleration::ConnectionError)
+        lambda{ @service.award_points("e285e1ed-2356-4676-a554-99d79e6284b0", 130, 10, "Action 'Some' taken") }.should raise_error(RewardStation::ConnectionError)
       end
     end
   end
@@ -135,7 +135,7 @@ describe Xceleration::RewardStation do
       end
 
       it "should not raise InvalidToken exception" do
-        lambda{ @service.return_user("e285e1ed-2356-4676-a554-99d79e6284b0", 130) }.should_not raise_error(Xceleration::InvalidToken)
+        lambda{ @service.return_user("e285e1ed-2356-4676-a554-99d79e6284b0", 130) }.should_not raise_error(RewardStation::InvalidToken)
       end
     end
 
@@ -145,7 +145,7 @@ describe Xceleration::RewardStation do
       end
 
       it "should raise InvalidToken exception" do
-        lambda{ @service.return_user("", 130) }.should raise_error(Xceleration::InvalidToken)
+        lambda{ @service.return_user("", 130) }.should raise_error(RewardStation::InvalidToken)
       end
     end
 
@@ -155,7 +155,7 @@ describe Xceleration::RewardStation do
       end
 
       it "should raise InvalidUser exception" do
-        lambda{ @service.return_user("e285e1ed-2356-4676-a554-99d79e6284b0", 130) }.should raise_error(Xceleration::InvalidUser)
+        lambda{ @service.return_user("e285e1ed-2356-4676-a554-99d79e6284b0", 130) }.should raise_error(RewardStation::InvalidUser)
       end
     end
 
@@ -165,7 +165,7 @@ describe Xceleration::RewardStation do
       end
 
       it "should raise ConnectionError exception" do
-        lambda{ @service.return_user("e285e1ed-2356-4676-a554-99d79e6284b0", 130) }.should raise_error(Xceleration::ConnectionError)
+        lambda{ @service.return_user("e285e1ed-2356-4676-a554-99d79e6284b0", 130) }.should raise_error(RewardStation::ConnectionError)
       end
     end
 
@@ -175,7 +175,7 @@ describe Xceleration::RewardStation do
       end
 
       it "should raise HttpError exception" do
-        lambda{ @service.return_user("e285e1ed-2356-4676-a554-99d79e6284b0", 130) }.should raise_error(Xceleration::ConnectionError)
+        lambda{ @service.return_user("e285e1ed-2356-4676-a554-99d79e6284b0", 130) }.should raise_error(RewardStation::ConnectionError)
       end
     end
   end
@@ -196,7 +196,7 @@ describe Xceleration::RewardStation do
       end
 
       it "should not raise InvalidToken exception" do
-        lambda{ @service.return_point_summary("e285e1ed-2356-4676-a554-99d79e6284b0", 130, '100080') }.should_not raise_error(Xceleration::InvalidToken)
+        lambda{ @service.return_point_summary("e285e1ed-2356-4676-a554-99d79e6284b0", 130, '100080') }.should_not raise_error(RewardStation::InvalidToken)
       end
     end
 
@@ -206,7 +206,7 @@ describe Xceleration::RewardStation do
       end
 
       it "should raise InvalidToken exception" do
-        lambda{ @service.return_point_summary("", 130, '100080') }.should raise_error(Xceleration::InvalidToken)
+        lambda{ @service.return_point_summary("", 130, '100080') }.should raise_error(RewardStation::InvalidToken)
       end
     end
 
@@ -216,7 +216,7 @@ describe Xceleration::RewardStation do
       end
 
       it "should raise ConnectionError exception" do
-        lambda{ @service.return_point_summary("e285e1ed-2356-4676-a554-99d79e6284b0", 130, '100080') }.should raise_error(Xceleration::ConnectionError)
+        lambda{ @service.return_point_summary("e285e1ed-2356-4676-a554-99d79e6284b0", 130, '100080') }.should raise_error(RewardStation::ConnectionError)
       end
     end
 
@@ -226,7 +226,7 @@ describe Xceleration::RewardStation do
       end
 
       it "should raise HttpError exception" do
-        lambda{ @service.return_point_summary("e285e1ed-2356-4676-a554-99d79e6284b0", 130, '100080') }.should raise_error(Xceleration::ConnectionError)
+        lambda{ @service.return_point_summary("e285e1ed-2356-4676-a554-99d79e6284b0", 130, '100080') }.should raise_error(RewardStation::ConnectionError)
       end
     end
   end
@@ -282,7 +282,7 @@ describe Xceleration::RewardStation do
                 :user_name => 'john5@company.com',
                 :balance => 0
             })
-        }.should_not raise_error(Xceleration::InvalidToken)
+        }.should_not raise_error(RewardStation::InvalidToken)
       end
     end
 
@@ -302,7 +302,7 @@ describe Xceleration::RewardStation do
                 :user_name => 'john5@company.com',
                 :balance => 0
             })
-        }.should raise_error(Xceleration::UserAlreadyExists)
+        }.should raise_error(RewardStation::UserAlreadyExists)
       end
     end
 
@@ -329,7 +329,7 @@ describe Xceleration::RewardStation do
       end
 
       it "should not raise InvalidToken exception" do
-        lambda{ @service.return_popular_products("e285e1ed-2356-4676-a554-99d79e6284b0", 130) }.should_not raise_error(Xceleration::InvalidToken)
+        lambda{ @service.return_popular_products("e285e1ed-2356-4676-a554-99d79e6284b0", 130) }.should_not raise_error(RewardStation::InvalidToken)
       end
     end
 
@@ -339,7 +339,7 @@ describe Xceleration::RewardStation do
       end
 
       it "should raise InvalidToken exception" do
-        lambda{ @service.return_popular_products("e285e1ed-2356-4676-a554-99d79e6284b0", 130) }.should raise_error(Xceleration::InvalidToken)
+        lambda{ @service.return_popular_products("e285e1ed-2356-4676-a554-99d79e6284b0", 130) }.should raise_error(RewardStation::InvalidToken)
       end
     end
 

@@ -1,19 +1,19 @@
-module Xceleration
-  class InvalidAccount < StandardError; end
-  class InvalidToken < StandardError; end
-  class InvalidUser < StandardError; end
-  class ConnectionError < StandardError;  end
-  class UserAlreadyExists < StandardError; end
+module RewardStation
 
-  class RewardStation
+  class Service
 
     PROGRAM_ID = 90
     POINT_REASON_CODE_ID = 129
 
     attr_reader :client
 
-    def initialize
-      @client = Savon::Client.new do |wsdl|
+    def initialize options = {}
+      options[:client_id]
+      options[:organization_id]
+    end
+
+    def self.client
+      @@client ||= Savon::Client.new do |wsdl|
         wsdl.document = File.join(File.dirname(__FILE__), '..', 'wsdl', 'reward_services.xml')
       end
     end
@@ -101,22 +101,22 @@ module Xceleration
 
     def request method_name, params
 
-      response = @client.request(:wsdl, method_name , params).to_hash
+      response = Service.client.request(:wsdl, method_name , params).to_hash
 
       result = response[:"#{method_name}_response"][:"#{method_name}_result"]
 
       unless (error_message = result.delete(:error_message).to_s).nil?
-        raise Xceleration::InvalidToken if error_message.start_with?("Invalid Token")
-        raise Xceleration::InvalidAccount if error_message.start_with?("Invalid Account Number")
-        raise Xceleration::InvalidUser if error_message.start_with?("Invalid User")
-        raise Xceleration::UserAlreadyExists if error_message.start_with?("User Name:") && error_message.end_with?("Please enter a different user name.")
+        raise RewardStation::InvalidToken if error_message.start_with?("Invalid Token")
+        raise RewardStation::InvalidAccount if error_message.start_with?("Invalid Account Number")
+        raise RewardStation::InvalidUser if error_message.start_with?("Invalid User")
+        raise RewardStation::UserAlreadyExists if error_message.start_with?("User Name:") && error_message.end_with?("Please enter a different user name.")
       end
 
       result
     rescue Savon::SOAP::Fault, Savon::HTTP::Error => ex
       puts ex.to_s
       puts ex.backtrace.inspect
-      raise ConnectionError, ex.message
+      raise RewardStation::ConnectionError.new
     end
   end
 end
