@@ -57,13 +57,13 @@ module RewardStation
       result[:token]
     end
 
-    def return_user xceleration_id
-      request_with_token(:return_user, :body => { 'UserID' => xceleration_id} )[:user_profile]
+    def return_user user_id
+      request_with_token(:return_user, :body => { 'UserID' => user_id} )[:user_profile]
     end
 
-    def award_points xceleration_id, points, description, program_id = nil, point_reason_code_id = nil
+    def award_points user_id, points, description, program_id = nil, point_reason_code_id = nil
       request_with_token(:award_points, :body => {
-          'UserID' => xceleration_id,
+          'UserID' => user_id,
           'Points' => points,
           'ProgramID' => program_id || @program_id,
           'PointReasonCodeID' => point_reason_code_id || @point_reason_code_id,
@@ -72,14 +72,14 @@ module RewardStation
     end
 
 
-    def return_point_summary xceleration_id
+    def return_point_summary user_id
       request_with_token(:return_point_summary, :body => {
           'clientId' => @client_id,
-          'userId' => xceleration_id
+          'userId' => user_id
       })[:point_summary_collection][:point_summary]
     end
 
-    def update_user xceleration_id, attrs = {}
+    def update_user user_id, attrs = {}
 
       organization_id = attrs[:organization_id] || @organization_id
       email = attrs[:email] || ""
@@ -90,7 +90,7 @@ module RewardStation
 
       request_with_token(:update_user , :body => {
           'updateUser' => {
-              'UserID' => xceleration_id,
+              'UserID' => user_id,
               'ClientID' => @client_id,
               'UserName' => user_name,
               'FirstName' => first_name,
@@ -109,8 +109,8 @@ module RewardStation
       update_user -1, attrs
     end
 
-    def return_popular_products xceleration_id
-      request_with_token(:return_popular_products , :body => { 'userId' => xceleration_id} )[:products][:product]
+    def return_popular_products user_id
+      request_with_token(:return_popular_products , :body => { 'userId' => user_id} )[:products][:product]
     end
 
     protected

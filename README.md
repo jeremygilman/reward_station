@@ -1,5 +1,7 @@
 ### Xceleration Reward Station
 
+Client library for Xceleration rewardstation.com service
+
 
 ## Basic Usage
 
@@ -9,7 +11,7 @@
 # Return Token
 Request access token
 
-    reward_station.return_token
+    token = reward_station.return_token
 
 # Award Points
 Update award points
@@ -17,9 +19,46 @@ Update award points
     user_id = "130"
     points = 10
     description = "Action 'Call to client' "
-    program_id = 90 #optional
-    point_reasond_code_id = 129 #optional
-    reward_station.award_points user_id, points, description, program_id, point_reason_code_id
+    program_id = 90 # optional
+    point_reasond_code_id = 129 # optional
+
+    confirmation_number = reward_station.award_points user_id, points, description, program_id, point_reason_code_id
+
+# Create User
+
+    user_attributes = reward_station.create_user :organization_id => '150',
+                                                 :email => 'john5@company.com',
+                                                 :first_name => 'John',
+                                                 :last_name => 'Smith',
+                                                 :user_name => 'john5@company.com',
+                                                 :balance => 0
+    puts user_attributes.inspect
+    # {
+    #    :user_id => '6727',
+    #    :client_id => '100080',
+    #    :user_name => 'john5@company.com',
+    #    :email => 'john5@company.com',
+    #    :encrypted_password => nil,
+    #    :first_name => 'John',
+    #    :last_name => 'Smith',
+    #    :address_one => nil,
+    #    :address_two => nil,
+    #    :city => nil,
+    #    :state_code => nil,
+    #    :province => nil,
+    #    :postal_code => nil,
+    #    :country_code => 'USA',
+    #    :phone => nil,
+    #    :organization_id => '150',
+    #    :organization_name => nil,
+    #    :rep_type_id => '0',
+    #    :client_region_id => '0',
+    #
+    #    :is_active => true,
+    #    :point_balance => '0',
+    #    :manager_id => '0',
+    #    :error_message => nil
+    # }
 
 
 ## Single-Sign-On
