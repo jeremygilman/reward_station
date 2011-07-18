@@ -2,7 +2,7 @@ source :rubygems
 
 gemspec
 
-gem 'savon', '0.9.6'
+gem 'rake'
 
 group 'development' do
   gem 'rspec', '2.6.0'

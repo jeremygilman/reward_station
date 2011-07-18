@@ -6,11 +6,11 @@ Gem::Specification.new do |s|
   s.name        = "reward_station"
   s.version     = RewardStation::VERSION
   s.platform    = Gem::Platform::RUBY
-  s.authors     = ["Stepan Filatov"]
+  s.authors     = ["Stepan Filatov", 'Cloud Castle Inc.']
   s.email       = ["filatov.st@gmail.com"]
   s.homepage    = "https://github.com/sfilatov/reward_station"
-  s.summary     = %q{Reward Station is a client implementation of the Xceleration Reward Station service API}
-  s.description = %q{Reward Station is a client implementation of the Xceleration Reward Station service API}
+  s.summary     = %q{Reward Station is a client library for rewardstation.com}
+  s.description = %q{}
 
   s.rubyforge_project = "reward_station"
 
@@ -18,4 +18,6 @@ Gem::Specification.new do |s|
   s.test_files    = `git ls-files -- {spec}/*`.split("\n")
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
+
+  s.add_dependency 'savon', ">= 0.9.6"
 end
