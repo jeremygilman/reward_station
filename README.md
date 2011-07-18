@@ -3,6 +3,24 @@
 
 ## Basic Usage
 
+#Initialization
+    reward_station = RewardStation::Service.new :client_id => "112112", :client_password => "fsdftr#"
+
+# Return Token
+Request access token
+
+    reward_station.return_token
+
+# Award Points
+Update award points
+
+    user_id = "130"
+    points = 10
+    description = "Action 'Call to client' "
+    program_id = 90 #optional
+    point_reasond_code_id = 129 #optional
+    reward_station.award_points user_id, points, description, program_id, point_reason_code_id
+
 
 ## Single-Sign-On
 
