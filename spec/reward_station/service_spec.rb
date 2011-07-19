@@ -84,10 +84,10 @@ describe RewardStation::Client do
   describe "award_points" do
     let(:service) {
       RewardStation::Client.new :client_id => '100080',
-                                 :client_password => 'fM6Rv4moz#',
-                                 :program_id => 90,
-                                 :point_reason_code_id => 129,
-                                 :token => "e285e1ed-2356-4676-a554-99d79e6284b0"
+                                :client_password => 'fM6Rv4moz#',
+                                :program_id => 90,
+                                :point_reason_code_id => 129,
+                                :token => "e285e1ed-2356-4676-a554-99d79e6284b0"
     }
 
     describe "on valid response" do
