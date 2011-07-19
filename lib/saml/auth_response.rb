@@ -1,3 +1,5 @@
+require 'ruby-saml'
+
 module SAML
   class AuthResponse
 

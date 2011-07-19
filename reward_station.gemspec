@@ -1,5 +1,6 @@
 # -*- encoding: utf-8 -*-
 $:.push File.expand_path("../lib", __FILE__)
+
 require "reward_station/version"
 
 Gem::Specification.new do |s|
@@ -8,7 +9,7 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Stepan Filatov", 'Cloud Castle Inc.']
   s.email       = ["filatov.st@gmail.com"]
-  s.homepage    = "https://github.com/sfilatov/reward_station"
+  s.homepage    = "https://github.com/cloudcastle/reward_station"
   s.summary     = %q{Reward Station is a client library for rewardstation.com}
   s.description = %q{}
 
@@ -20,4 +21,5 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
 
   s.add_dependency 'savon', ">= 0.9.6"
+  s.add_dependency "ruby-saml-bekk", '>= 0.3.3'
 end

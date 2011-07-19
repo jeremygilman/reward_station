@@ -1,4 +1,15 @@
 module Savon
+  # = Savon::Spec::Macros
+  #
+  # Include this module into your RSpec tests to mock/stub Savon SOAP requests.
+  module Macros
+    def savon
+      Savon::SOAP::Response.any_instance.stub(:soap_fault?).and_return(false)
+      Savon::SOAP::Response.any_instance.stub(:http_error?).and_return(false)
+      Savon::Mock.new
+    end
+  end
+
   # = Savon::Spec::Mock
   #
   # Mocks/stubs SOAP requests executed by Savon.
@@ -30,7 +41,7 @@ module Savon
       http = { :code => 200, :headers => {}, :body => "" }
 
       case response
-        when Symbol   then http[:body] = MockResponse[soap_action, response]
+        when Symbol   then http[:body] = RewardStation::StubResponse[soap_action, response]
         when Hash     then http.merge! response
         when String   then http[:body] = response
       end
@@ -67,4 +78,5 @@ module Savon
       @soap_action = soap_action.kind_of?(Symbol) ? soap_action.to_s.lower_camelcase : soap_action
     end
   end
+
 end

@@ -1,13 +1,13 @@
-module Savon
-  class MockResponse
+module RewardStation
+  class StubResponse
     class << self
 
       def gem_responses_path
-        File.join(File.dirname(__FILE__), "..", "responses")
+        File.join(File.dirname(__FILE__), "responses")
       end
 
       def local_responses_path
-        File.expand_path('config/responses') rescue nil
+        File.expand_path('config/reward_station/responses') rescue nil
       end
 
       def load(*args)
