@@ -1,17 +1,40 @@
 ### Xceleration Reward Station
 
-Client library for Xceleration rewardstation.com service
-
+Client library for Xceleration rewardstation.com SOAP service
 
 ## Basic Usage
 
-#Initialization
-    reward_station = RewardStation::Service.new :client_id => "112112", :client_password => "fsdftr#"
+Common scenario is creating client instance using required parameters :client_id and :client_password.
+Client implements several methods for accessing reward station SOAP API.
+
+# Initialization
+    reward_station = RewardStation::Client.new :client_id => "112112",                      # required
+                                               :client_password => "fsdftr#",               # required
+                                               :organization_id => '150',                   # optional, default Organization ID
+                                               :program_id => 25,                           # optional, default Program ID
+                                               :point_reasond_code_id => 129                # optional, default Point Reason Code ID
+                                               :token => "sdfweqwrtwerfasdfas"              # optional, initial Access Token value
+                                               :new_token_callback => lambda{|token| ... }   # optional, callback on Access Token change
+
+# New Token Callback
+You can specify callback in constructor as `lambda` or `proc`
+Or you can specify callback as block:
+
+    reward_station.new_token_calback do |new_token|
+        # notify other client instance about new token
+    end
 
 # Return Token
 Request access token
 
     token = reward_station.return_token
+
+# Update Token Callback
+    reward_station = RewardStation::Client.new :client_id => "112112",
+                                               :client_password => "fsdftr#",
+                                               :rew
+
+
 
 # Award Points
 Update award points
@@ -59,6 +82,32 @@ Update award points
     #    :manager_id => '0',
     #    :error_message => nil
     # }
+
+## Stub Client
+
+Client supports stub mode. Stub supports all request methods supported by `RewardStation::Client`
+Stub client don't make requests to Reward Station API. It just returns predefined SOAP responses.
+You can override those responses in `config/reward_station/responses` folder.
+For example if `award_points` method response should be overridden then add `award_points.xml` file to `config/reward_station/responses` folder.
+
+# Stub Initialization
+
+    stub = RewardStation::Client.stub
+
+#config/reward_station/responses/award_points.xml
+
+    <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+       <soap:Body>
+          <AwardPointsResponse xmlns="http://rswebservices.rewardstation.com/">
+             <AwardPointsResult>
+                <UserID>577</UserID>
+                <Points>10</Points>
+                <ConfirmationNumber>9376</ConfirmationNumber>
+                <ErrorMessage/>
+             </AwardPointsResult>
+          </AwardPointsResponse>
+       </soap:Body>
+    </soap:Envelope>
 
 
 ## Single-Sign-On

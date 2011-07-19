@@ -1,5 +1,5 @@
 module RewardStation
-  class Service
+  class Client
 
     def initialize options = {}
       [:client_id, :client_password].each do |arg|
@@ -19,11 +19,6 @@ module RewardStation
         @new_token_callback = options[:new_token_callback]
       end
 
-      @mode = :default
-      if options[:mode]
-        raise ArgumentError, "supported modes :default and :mock" unless [:mock, :default].include?(options[:mode].to_sym)
-        @mode = options[:mode].to_sym
-      end
     end
 
     def new_token_callback &block
@@ -31,7 +26,12 @@ module RewardStation
     end
 
     class << self
-      def client
+
+      def stub options = {}
+        RewardStation::StubClient.new options
+      end
+
+      def get_client
         @@client ||= Savon::Client.new do |wsdl|
           wsdl.document = File.join(File.dirname(__FILE__), '..', 'wsdl', 'reward_services.xml')
         end
@@ -43,7 +43,7 @@ module RewardStation
     end
 
     def logger
-      Service.logger
+      Client.logger
     end
 
     def return_token
@@ -115,10 +115,6 @@ module RewardStation
 
     protected
 
-    def mock?
-      @mode == :mock
-    end
-
     def update_token
       @token = return_token
       @new_token_callback.call(@token) if @new_token_callback
@@ -139,12 +135,7 @@ module RewardStation
     end
 
     def request method_name, params
-
-      if mock?
-        #TODO
-      end
-
-      response = Service.client.request(:wsdl, method_name , params).to_hash
+      response = get_response method_name, params
 
       logger.debug response.inspect
 
@@ -162,6 +153,10 @@ module RewardStation
       logger.error ex.to_s
       logger.error ex.backtrace.inspect
       raise ConnectionError.new
+    end
+
+    def get_response method_name, params
+      Client.get_client.request(:wsdl, method_name , params).to_hash
     end
   end
 end

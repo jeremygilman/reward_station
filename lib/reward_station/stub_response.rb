@@ -11,8 +11,8 @@ module RewardStation
       end
 
       def load(*args)
-        file = args.map { |arg| arg.to_s.snakecase }.join("/")
-        responses[file] ||= load_response_file file
+        file_name = args.last
+        responses[file_name] ||= load_response_file file_name
       end
 
       alias_method :[], :load
@@ -23,20 +23,20 @@ module RewardStation
         @responses ||= {}
       end
 
-      def load_response_file(file)
+      def load_response_file file_name
         file_path = nil
 
         if local_responses_path
-          local_path = File.join(local_responses_path, "#{file}.xml")
+          local_path = File.join(local_responses_path, "#{file_name}.xml")
           file_path = local_path if File.exist?(local_path)
         end
 
         unless file_path
-          gem_path = File.join(gem_responses_path, "#{file}.xml")
+          gem_path = File.join(gem_responses_path, "#{file_name}.xml")
           file_path = gem_path if File.exist?(gem_path)
         end
 
-        raise ArgumentError, "Unable to load: #{file}" unless file_path
+        raise ArgumentError, "Unable to load: #{file_name}" unless file_path
 
         File.read file_path
       end

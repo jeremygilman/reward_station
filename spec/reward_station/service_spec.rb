@@ -1,30 +1,44 @@
 require 'spec_helper'
 
-describe RewardStation::Service do
+describe RewardStation::Client do
 
-  let(:service) { RewardStation::Service.new :client_id => '100080', :client_password => 'fM6Rv4moz#', :token => "e285e1ed-2356-4676-a554-99d79e6284b0" }
+  let(:service) { RewardStation::Client.new :client_id => '100080', :client_password => 'fM6Rv4moz#', :token => "e285e1ed-2356-4676-a554-99d79e6284b0" }
 
   describe "required options" do
     it "should raise ArgumentError on missing client_id" do
-      lambda{ RewardStation::Service.new :client_password => "" }.should raise_error(ArgumentError)
+      lambda{ RewardStation::Client.new :client_password => "" }.should raise_error(ArgumentError)
     end
 
     it "should raise ArgumentError on missing client_password" do
-      lambda{ RewardStation::Service.new :client_id => "" }.should raise_error(ArgumentError)
+      lambda{ RewardStation::Client.new :client_id => "" }.should raise_error(ArgumentError)
     end
 
     it "should not rause ArgumentError if all required parameters present" do
-      lambda{ RewardStation::Service.new :client_id => "", :client_password => "" }.should_not raise_error(ArgumentError)
+      lambda{ RewardStation::Client.new :client_id => "", :client_password => "" }.should_not raise_error(ArgumentError)
     end
   end
 
   describe "new_token_callback" do
     it "should raise ArgumentError if options is not lambda or proc" do
-      lambda{ RewardStation::Service.new :client_id => "", :client_password => "", :new_token_callback => "" }.should raise_error(ArgumentError)
+      lambda{ RewardStation::Client.new :client_id => "", :client_password => "", :new_token_callback => "" }.should raise_error(ArgumentError)
     end
 
     it "should not raise ArgumentError if option is lambda or proc" do
-      lambda{ RewardStation::Service.new :client_id => "", :client_password => "", :new_token_callback => Proc.new { } }.should_not raise_error(ArgumentError)
+      lambda{ RewardStation::Client.new :client_id => "", :client_password => "", :new_token_callback => Proc.new { } }.should_not raise_error(ArgumentError)
+    end
+  end
+
+  describe 'stub' do
+    it "should create stub" do
+      RewardStation::Client.stub.should be_a(RewardStation::StubClient)
+    end
+
+    describe 'stub service' do
+      let(:service) {RewardStation::Client.stub}
+
+      it "should return token" do
+        service.return_token.should eq("e285e1ed-2356-4676-a554-99d79e6284b0")
+      end
     end
   end
 
@@ -69,7 +83,7 @@ describe RewardStation::Service do
 
   describe "award_points" do
     let(:service) {
-      RewardStation::Service.new :client_id => '100080',
+      RewardStation::Client.new :client_id => '100080',
                                  :client_password => 'fM6Rv4moz#',
                                  :program_id => 90,
                                  :point_reason_code_id => 129,
@@ -223,7 +237,7 @@ describe RewardStation::Service do
   end
 
   describe "update_user" do
-    let(:service) { RewardStation::Service.new :client_id => '100080', :client_password => 'fM6Rv4moz#', :organization_id => '150', :token => "e285e1ed-2356-4676-a554-99d79e6284b0" }
+    let(:service) { RewardStation::Client.new :client_id => '100080', :client_password => 'fM6Rv4moz#', :organization_id => '150', :token => "e285e1ed-2356-4676-a554-99d79e6284b0" }
 
     describe "on create user valid request" do
       before { savon.stub(:update_user).and_return(:create_user) }
