@@ -1,22 +1,25 @@
-### Xceleration Reward Station
+# Xceleration Reward Station
 
 Client library for Xceleration rewardstation.com SOAP service
 
 ## Basic Usage
 
-Common scenario is creating client instance using required parameters :client_id and :client_password.
+Common scenario is creating client instance using required parameters `:client_id` and `:client_password`.
 Client implements several methods for accessing reward station SOAP API.
 
-# Initialization
-    reward_station = RewardStation::Client.new :client_id => "112112",                      # required
-                                               :client_password => "fsdftr#",               # required
-                                               :organization_id => '150',                   # optional, default Organization ID
-                                               :program_id => 25,                           # optional, default Program ID
-                                               :point_reasond_code_id => 129                # optional, default Point Reason Code ID
-                                               :token => "sdfweqwrtwerfasdfas"              # optional, initial Access Token value
-                                               :new_token_callback => lambda{|token| ... }   # optional, callback on Access Token change
+### Initialization
 
-# New Token Callback
+    reward_station = RewardStation::Client.new {
+        :client_id => "112112",                      # required
+        :client_password => "fsdftr#",               # required
+        :organization_id => '150',                   # optional, default Organization ID
+        :program_id => 25,                           # optional, default Program ID
+        :point_reasond_code_id => 129                # optional, default Point Reason Code ID
+        :token => "sdfweqwrtwerfasdfas"              # optional, initial Access Token value
+        :new_token_callback => lambda{ |token| ... } # optional, callback on Access Token change
+    }
+
+### New Token Callback
 You can specify callback in constructor as `lambda` or `proc`
 Or you can specify callback as block:
 
@@ -24,19 +27,12 @@ Or you can specify callback as block:
         # notify other client instance about new token
     end
 
-# Return Token
-Request access token
+### Return Token
+Access token request. Usually not needed on businnes level because client requests it when it became invalid or expired
 
     token = reward_station.return_token
 
-# Update Token Callback
-    reward_station = RewardStation::Client.new :client_id => "112112",
-                                               :client_password => "fsdftr#",
-                                               :rew
-
-
-
-# Award Points
+### Award Points
 Update award points
 
     user_id = "130"
@@ -47,7 +43,7 @@ Update award points
 
     confirmation_number = reward_station.award_points user_id, points, description, program_id, point_reason_code_id
 
-# Create User
+### Create User
 
     user_attributes = reward_station.create_user :organization_id => '150',
                                                  :email => 'john5@company.com',
@@ -83,18 +79,17 @@ Update award points
     #    :error_message => nil
     # }
 
-## Stub Client
+## Client Stub
 
-Client supports stub mode. Stub supports all request methods supported by `RewardStation::Client`
-Stub client don't make requests to Reward Station API. It just returns predefined SOAP responses.
-You can override those responses in `config/reward_station/responses` folder.
-For example if `award_points` method response should be overridden then add `award_points.xml` file to `config/reward_station/responses` folder.
+Client supports stub mode.
+Client stub supports all request methods supported by `RewardStation::Client` but it doesn't make requests to Reward Station API. It just returns predefined SOAP responses.
+You can override those responses in `config/reward_station/responses` folder. For example if `award_points` method response should be overridden then add `award_points.xml` file to `config/reward_station/responses` folder.
 
-# Stub Initialization
+### Stub Initialization
 
     stub = RewardStation::Client.stub
 
-#config/reward_station/responses/award_points.xml
+### config/reward_station/responses/award_points.xml
 
     <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
        <soap:Body>
@@ -114,7 +109,7 @@ For example if `award_points` method response should be overridden then add `awa
 
 Basic SSO logic implemented in SAML::AuthResponse class. Example usage of AuthResponse:
 
-#SessionController
+### SessionController
 
     require 'saml/auth_response'
 
@@ -159,7 +154,7 @@ Basic SSO logic implemented in SAML::AuthResponse class. Example usage of AuthRe
       end
     end
 
-# signon.html.erb
+### signon.html.erb
 
     <html>
       <body>
