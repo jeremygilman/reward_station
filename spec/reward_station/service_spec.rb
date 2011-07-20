@@ -236,6 +236,17 @@ describe RewardStation::Client do
     end
   end
 
+  describe "create_user" do
+    describe 'missing information' do
+
+      before { savon.stub(:update_user).and_return(:create_user_missing_info) }
+
+      it "should raise MissingInformation error" do
+        lambda { service.create_user :organization_id => '150' }.should raise_error(RewardStation::MissingInformation)
+      end
+    end
+  end
+
   describe "update_user" do
     let(:service) { RewardStation::Client.new :client_id => '100080', :client_password => 'fM6Rv4moz#', :organization_id => '150', :token => "e285e1ed-2356-4676-a554-99d79e6284b0" }
 

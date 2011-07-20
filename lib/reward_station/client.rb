@@ -146,6 +146,7 @@ module RewardStation
         raise InvalidAccount if error_message.start_with?("Invalid Account Number")
         raise InvalidUser if error_message.start_with?("Invalid User")
         raise UserAlreadyExists if error_message.start_with?("User Name:") && error_message.end_with?("Please enter a different user name.")
+        raise MissingInformation if error_message.start_with?("The following information is missing:")
       end
 
       result

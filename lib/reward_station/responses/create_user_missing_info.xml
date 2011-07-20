@@ -1,0 +1,9 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <UpdateUserResponse xmlns="http://rswebservices.rewardstation.com/">
+      <UpdateUserResult>
+        <ErrorMessage>The following information is missing: First Name; Last Name;</ErrorMessage>
+      </UpdateUserResult>
+    </UpdateUserResponse>
+  </soap:Body>
+</soap:Envelope>
