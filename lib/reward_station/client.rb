@@ -126,12 +126,11 @@ module RewardStation
 
     def request_with_token method_name, params
       update_token unless @token
-      inject_token params
-      request method_name, params
-    rescue InvalidToken
-      update_token
-      inject_token params
-      request method_name, params
+
+      retry_with_token :tries => 2 do
+        inject_token params
+        request method_name, params
+      end
     end
 
     def request method_name, params
@@ -158,6 +157,27 @@ module RewardStation
 
     def get_response method_name, params
       Client.get_client.request(:wsdl, method_name , params).to_hash
+    end
+
+    private
+
+    def retry_with_token( options = {})
+      opts = {:tries => 1}.merge(options)
+
+      if (tries = opts[:tries]) <= 0
+        return
+      end
+
+      begin
+          return yield
+      rescue InvalidToken => ex
+        if (tries -= 1) > 0
+          update_token
+          retry
+        else
+          raise ex
+        end
+      end
     end
   end
 end
