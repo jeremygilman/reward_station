@@ -1,6 +1,8 @@
 module RewardStation
   class Client
 
+    attr_accessor :token
+
     def initialize options = {}
       [:client_id, :client_password].each do |arg|
         raise ArgumentError, "Missing required option '#{arg}'" unless options.has_key? arg
@@ -115,22 +117,8 @@ module RewardStation
 
     protected
 
-    def update_token
-      @token = return_token
-      @new_token_callback.call(@token) if @new_token_callback
-    end
-
-    def inject_token params = {}
-      (params[:body] ||= {})['Token'] = @token
-    end
-
-    def request_with_token method_name, params
-      update_token unless @token
-
-      retry_with_token :tries => 2 do
-        inject_token params
-        request method_name, params
-      end
+    def get_response method_name, params
+      Client.get_client.request(:wsdl, method_name , params).to_hash
     end
 
     def request method_name, params
@@ -155,8 +143,22 @@ module RewardStation
       raise ConnectionError.new
     end
 
-    def get_response method_name, params
-      Client.get_client.request(:wsdl, method_name , params).to_hash
+    def update_token
+      @token = return_token
+      @new_token_callback.call(@token) if @new_token_callback
+    end
+
+    def inject_token params = {}
+      (params[:body] ||= {})['Token'] = @token
+    end
+
+    def request_with_token method_name, params
+      update_token unless @token
+
+      retry_with_token :tries => 2 do
+        inject_token params
+        request method_name, params.dup
+      end
     end
 
     private
