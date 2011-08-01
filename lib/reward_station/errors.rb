@@ -25,6 +25,7 @@ module RewardStation
   class InvalidUser < StandardError; end
   class UserAlreadyExists < StandardError; end
   class MissingInformation < StandardError; end
+  class UnknownError < StandardError; end
 
   class ConnectionError < StandardError
     include NestingError

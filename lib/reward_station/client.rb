@@ -128,12 +128,14 @@ module RewardStation
 
       result = response[:"#{method_name}_response"][:"#{method_name}_result"]
 
-      unless (error_message = result.delete(:error_message).to_s).nil?
+      unless (error_message = result.delete(:error_message).to_s).blank?
         raise(InvalidToken, error_message) if error_message.start_with?("Invalid Token")
         raise InvalidAccount if error_message.start_with?("Invalid Account Number")
         raise InvalidUser if error_message.start_with?("Invalid User")
         raise(UserAlreadyExists, error_message) if error_message.start_with?("User Name:") && error_message.end_with?("Please enter a different user name.")
         raise MissingInformation if error_message.start_with?("The following information is missing:")
+
+        raise(UnknownError, error_message)
       end
 
       result
