@@ -101,7 +101,19 @@ module RewardStation
               'Email' => email,
               'IsActive' => true,
               'PointBalance' => balance,
-              'OrganizationID' => organization_id
+              'OrganizationID' => organization_id,
+              'AddressOne' => "",
+              'AddressTwo' => "",
+              'City' => "",
+              'StateCode' => "",
+              'Province' => "",
+              'PostalCode' => "",
+              'Phone' => "",
+              'OrganizationName' => "",
+              'RepTypeID' => "",
+              'ClientRegionID' => "",
+              'ManagerID' => "",
+              'ManagerName' => ""
           }
       })[:update_user]
     end
