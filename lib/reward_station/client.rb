@@ -62,6 +62,10 @@ module RewardStation
     def return_user user_id
       request_with_token(:return_user, :body => { 'UserID' => user_id} )[:user_profile]
     end
+    
+    def return_user_by_user_name user_name
+       request_with_token(:return_user_by_user_name , :body => { 'UserName' => user_name} )[:user_profile]
+    end
 
     def award_points user_id, points, description, program_id = nil, point_reason_code_id = nil
       request_with_token(:award_points, :body => {
@@ -79,17 +83,6 @@ module RewardStation
           'clientId' => @client_id,
           'userId' => user_id
       })[:point_summary_collection][:point_summary]
-    end
-    
-    def return_user user_id, attrs = {}
-       organization_id = attrs[:organization_id] || @organization_id
-       user_name = attrs[:user_name] || email
-       
-       request_with_token(:return_user_by_user_name , :body => {
-         'ReturnUserByUserName' => {
-           'UserName' => user_name,
-         }[:return_user_by_user_name]
-       })
     end
 
     def update_user user_id, attrs = {}

@@ -96,6 +96,28 @@
                <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string"/>
             </s:sequence>
          </s:complexType>
+		 <s:element name="ReturnUserByUserName">
+            <s:complexType>
+               <s:sequence>
+                  <s:element minOccurs="1" maxOccurs="1" name="UserName" type="s:string"/>
+                  <s:element minOccurs="0" maxOccurs="1" name="Token" type="s:string"/>
+               </s:sequence>
+            </s:complexType>
+         </s:element>
+		<s:element name="ReturnUserByUserNameResponse">
+            <s:complexType>
+               <s:sequence>
+                  <s:element minOccurs="0" maxOccurs="1" name="ReturnUserByUserNameResult" type="tns:ReturnUserByUserNameResult"/>
+               </s:sequence>
+            </s:complexType>
+         </s:element>
+		<s:complexType name="ReturnUserByUserNameResult">
+            <s:sequence>
+               <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int"/>
+               <s:element minOccurs="0" maxOccurs="1" name="UserProfile" type="tns:User"/>
+               <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string"/>
+            </s:sequence>
+         </s:complexType>
          <s:element name="UpdateUser">
             <s:complexType>
                <s:sequence>
@@ -286,6 +308,12 @@
    <wsdl:message name="ReturnUserSoapOut">
       <wsdl:part name="parameters" element="tns:ReturnUserResponse"/>
    </wsdl:message>
+   <wsdl:message name="ReturnUserByUserNameSoapIn">
+      <wsdl:part name="parameters" element="tns:ReturnUserByUserName"/>
+   </wsdl:message>
+   <wsdl:message name="ReturnUserByUserNameSoapOut">
+      <wsdl:part name="parameters" element="tns:ReturnUserByUserNameResponse"/>
+   </wsdl:message>
    <wsdl:message name="UpdateUserSoapIn">
       <wsdl:part name="parameters" element="tns:UpdateUser"/>
    </wsdl:message>
@@ -328,6 +356,10 @@
       <wsdl:operation name="ReturnUser">
          <wsdl:input message="tns:ReturnUserSoapIn"/>
          <wsdl:output message="tns:ReturnUserSoapOut"/>
+      </wsdl:operation>
+	  <wsdl:operation name="ReturnUserByUserName">
+         <wsdl:input message="tns:ReturnUserByUserNameSoapIn"/>
+         <wsdl:output message="tns:ReturnUserByUserNameSoapOut"/>
       </wsdl:operation>
       <wsdl:operation name="UpdateUser">
          <wsdl:input message="tns:UpdateUserSoapIn"/>
@@ -372,6 +404,15 @@
       </wsdl:operation>
       <wsdl:operation name="ReturnUser">
          <soap:operation soapAction="http://rswebservices.rewardstation.com/ReturnUser" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+      </wsdl:operation>
+	  <wsdl:operation name="ReturnUserByUserName">
+         <soap:operation soapAction="http://rswebservices.rewardstation.com/ReturnUserByUserName" style="document"/>
          <wsdl:input>
             <soap:body use="literal"/>
          </wsdl:input>
@@ -447,6 +488,15 @@
       </wsdl:operation>
       <wsdl:operation name="ReturnUser">
          <soap12:operation soapAction="http://rswebservices.rewardstation.com/ReturnUser" style="document"/>
+         <wsdl:input>
+            <soap12:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap12:body use="literal"/>
+         </wsdl:output>
+      </wsdl:operation>
+	  <wsdl:operation name="ReturnUserByUserName">
+         <soap12:operation soapAction="http://rswebservices.rewardstation.com/ReturnUserByUserName" style="document"/>
          <wsdl:input>
             <soap12:body use="literal"/>
          </wsdl:input>
